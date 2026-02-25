@@ -3,8 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Simona Coltello</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-
 <style>
 /* --- RESET & BASICS --- */
 * {
@@ -18,39 +16,53 @@ html {
 }
 
 body {
-  background: black;
-  color: #BCBCBC; 
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  background: #d0d0d0;
+  color: #000;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
   overflow-x: hidden;
+}
+
+/* --- PAGE WRAPPER WITH GREY BORDER --- */
+#page-wrapper {
+  background: #fff;
+  max-width: 1400px;
+  margin: 20px auto;
+  border: 1px solid #b0b0b0;
+  box-shadow: 0 0 0 1px #c8c8c8;
+  min-height: 100vh;
 }
 
 /* --- TOP BAR --- */
 #top {
   position: fixed;
-  top: 30px; 
-  left: 30px; 
-  right: 30px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1398px;
   display: flex; 
   justify-content: space-between; 
   align-items: center;
   z-index: 100; 
   font-size: 11px;
-  background: black;
-  padding: 10px 0;
+  background: #fff;
+  padding: 12px 30px;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 #logo {
-  color: #BCBCBC;
+  color: #000;
   text-decoration: none;
   font-size: 11px;
+  font-weight: bold;
   transition: color 0.2s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 #logo:hover {
-  color: #ffffff;
+  color: #555;
 }
 
 #nav-links {
@@ -59,16 +71,17 @@ body {
 }
 
 #nav-links a {
-  color: #BCBCBC;
+  color: #000;
   text-decoration: none;
   font-size: 11px;
+  font-weight: bold;
   transition: color 0.2s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 #nav-links a:hover {
-  color: #ffffff;
+  color: #555;
 }
 
 /* --- SECTIONS --- */
@@ -78,36 +91,37 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 #curation {
   flex-direction: column;
   padding: 100px 30px;
-  background: black;
+  background: #fff;
 }
 
 #graphic-design {
   flex-direction: column;
   padding: 100px 30px;
-  background: #0a0a0a;
+  background: #fafafa;
 }
 
 #art-direction {
   flex-direction: column;
   padding: 100px 30px;
-  background: black;
+  background: #fff;
 }
 
 #photography {
   flex-direction: column;
   padding: 100px 30px;
-  background: #0a0a0a;
+  background: #fafafa;
 }
 
 section h2 {
   font-size: 24px;
-  font-weight: 300;
-  color: #BCBCBC;
+  font-weight: bold;
+  color: #000;
   margin-bottom: 60px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -119,41 +133,44 @@ section h2 {
   flex-direction: column;
   text-align: center;
   padding-top: 150px;
+  background: #fff;
 }
 
 #hero h1 {
   font-size: 48px;
-  font-weight: 300;
-  color: #BCBCBC;
+  font-weight: bold;
+  color: #000;
   margin-bottom: 20px;
   letter-spacing: 2px;
 }
 
 #hero .subtitle {
   font-size: 11px;
-  color: #BCBCBC;
+  color: #555;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-bottom: 40px;
+  font-weight: bold;
 }
 
 #hero .bio {
   max-width: 800px;
   font-size: 13px;
   line-height: 1.8;
-  color: #BCBCBC;
+  color: #333;
+  font-weight: normal;
 }
 
 /* --- ABOUT SECTION --- */
 #about {
   flex-direction: column;
-  background: black;
+  background: #fff;
 }
 
 #about h2 {
   font-size: 24px;
-  font-weight: 300;
-  color: #BCBCBC;
+  font-weight: bold;
+  color: #000;
   margin-bottom: 40px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -167,8 +184,9 @@ section h2 {
 #about .bio-text {
   font-size: 13px;
   line-height: 1.8;
-  color: #BCBCBC;
+  color: #333;
   margin-bottom: 40px;
+  font-weight: normal;
 }
 
 #about .collaborations {
@@ -179,8 +197,8 @@ section h2 {
 
 #about .collab-section h3 {
   font-size: 11px;
-  font-weight: 400;
-  color: #BCBCBC;
+  font-weight: bold;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 15px;
@@ -189,7 +207,8 @@ section h2 {
 #about .collab-section p {
   font-size: 11px;
   line-height: 1.8;
-  color: #BCBCBC;
+  color: #333;
+  font-weight: normal;
 }
 
 /* --- PROJECTS SECTION --- */
@@ -200,7 +219,7 @@ section h2 {
 
 #projects h2 {
   font-size: 24px;
-  font-weight: 300;
+  font-weight: bold;
   color: #000;
   margin-bottom: 60px;
   text-transform: uppercase;
@@ -229,8 +248,9 @@ section h2 {
 .project-image {
   width: 100%;
   aspect-ratio: 4/3;
-  background: #1a1a1a;
+  background: #e8e8e8;
   overflow: hidden;
+  border: 1px solid #d0d0d0;
 }
 
 .project-image img {
@@ -246,8 +266,8 @@ section h2 {
 
 .project-info h3 {
   font-size: 18px;
-  font-weight: 400;
-  color: #BCBCBC;
+  font-weight: bold;
+  color: #000;
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -255,45 +275,48 @@ section h2 {
 
 .project-info .role {
   font-size: 10px;
-  color: #BCBCBC;
+  color: #555;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .project-info p {
   font-size: 12px;
   line-height: 1.8;
-  color: #BCBCBC;
+  color: #333;
+  font-weight: normal;
 }
 
 /* --- CONTACT SECTION --- */
 #contact {
   flex-direction: column;
-  background: #0a0a0a;
+  background: #fafafa;
   text-align: center;
 }
 
 #contact h2 {
   font-size: 24px;
-  font-weight: 300;
-  color: #BCBCBC;
+  font-weight: bold;
+  color: #000;
   margin-bottom: 40px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 #contact a {
-  color: #BCBCBC;
+  color: #000;
   text-decoration: none;
   font-size: 13px;
   transition: color 0.2s ease;
   display: block;
   margin-bottom: 10px;
+  font-weight: normal;
 }
 
 #contact a:hover {
-  color: #ffffff;
+  color: #555;
 }
 
 /* --- RESPONSIVE --- */
@@ -313,11 +336,16 @@ section h2 {
   #about .collaborations {
     grid-template-columns: 1fr;
   }
+
+  #top {
+    width: calc(100% - 20px);
+  }
 }
 </style>
 </head>
 
 <body>
+<div id="page-wrapper">
 <!-- TOP BAR -->
 <div id="top">
   <a href="#hero" id="logo">Simona Coltello</a>
@@ -551,8 +579,9 @@ section h2 {
 <section id="contact">
   <h2>Get in Touch</h2>
   <a href="mailto:simonacoltello@gmail.com">simonacoltello@gmail.com</a>
-  <a href="tel:+393316101254">+39 331 610 1254</a>
+  <a href="https://www.instagram.com/simonacoltello" target="_blank">Instagram</a>
 </section>
 
+</div><!-- end page-wrapper -->
 </body>
 </html>
