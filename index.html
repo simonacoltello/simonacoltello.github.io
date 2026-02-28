@@ -317,6 +317,7 @@ section h2 { color: #000; }
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .gallery-item-info {
@@ -630,19 +631,16 @@ section h2 { color: #000; }
   <!-- BOOKS -->
   <div class="subsection-label">Books</div>
 
-  <div class="gallery-item" style="flex: 0 0 100%; width: 100%;">
+  <div style="width:100%; position:relative; margin:0; padding:0;">
     <img src="assetsc/Books/autostraddle.png" alt="Autostraddle Magazine" style="width:100%; height:auto; display:block;">
-    <div class="gallery-item-info" style="padding: 12px 30px 0 30px;">
-      <h3>Autostraddle Magazine</h3>
-      <div class="role">Art Direction & Graphic Design</div>
+    <div style="position:absolute; bottom:0; left:0; padding:8px 30px; mix-blend-mode:exclusion; line-height:1.2;">
+      <h3 style="font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:1px; color:#fff; margin-bottom:2px;">Autostraddle Magazine</h3><div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#fff;">Art Direction & Graphic Design</div>
     </div>
   </div>
-
-  <div class="gallery-item" style="flex: 0 0 100%; width: 100%; margin-top: 40px;">
+  <div style="width:100%; position:relative; margin:0; padding:0;">
     <img src="assetsc/Books/pessima.png" alt="Pessima Magazine" style="width:100%; height:auto; display:block;">
-    <div class="gallery-item-info" style="padding: 12px 30px 0 30px;">
-      <h3>Pessima Magazine</h3>
-      <div class="role">Creative Director & Chief Editor • 2020-Present</div>
+    <div style="position:absolute; bottom:0; left:0; padding:8px 30px; mix-blend-mode:exclusion; line-height:1.2;">
+      <h3 style="font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:1px; color:#fff; margin-bottom:2px;">Pessima Magazine</h3><div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#fff;">Creative Director & Chief Editor</div>
     </div>
   </div>
 
@@ -651,7 +649,7 @@ section h2 { color: #000; }
 
   <div class="gallery-scroll">
     <div class="gallery-item">
-      <img src="assetsc/Logos/4k.svg" alt="4K">
+      <img src="assetsc/Logos/4k.svg" alt="4K" style="width:50%; margin: 0 auto;">
       <div class="gallery-item-info">
         <h3>4K</h3>
         <div class="role">Logo & Brand Identity</div>
