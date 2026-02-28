@@ -67,7 +67,7 @@ section {
 #photography {
   flex-direction: column;
   padding: 60px 0;
-  background: #fafafa;
+  background: #fff;
   align-items: flex-start;
 }
 
@@ -81,7 +81,7 @@ section {
 #curation {
   flex-direction: column;
   padding: 60px 0;
-  background: #fafafa;
+  background: #fff;
 }
 
 #artworks {
@@ -408,7 +408,7 @@ section h2 { color: #000; }
 /* --- CONTACT SECTION --- */
 #contact {
   flex-direction: column;
-  background: #fafafa;
+  background: #fff;
   text-align: center;
 }
 
@@ -746,7 +746,7 @@ section h2 { color: #000; }
 
   <div class="project">
     <div class="project-image">
-      <img src="assetsc/Artworks/Bandiera1.JPG" alt="No room for effortless conversation">
+      <img src="assetsc/Artworks/Bandiera1.webp" alt="No room for effortless conversation">
     </div>
     <div class="project-overlay">
       <h3>No room for effortless conversation</h3>
@@ -757,7 +757,7 @@ section h2 { color: #000; }
 
   <div class="project">
     <div class="project-image">
-      <img src="assetsc/Artworks/Touching1.jpg" alt="Touching Grass/Sand in Ultra HD">
+      <img src="assetsc/Artworks/Touching1.webp" alt="Touching Grass/Sand in Ultra HD">
     </div>
     <div class="project-overlay">
       <h3>Touching Grass/Sand in Ultra HD</h3>
@@ -768,7 +768,7 @@ section h2 { color: #000; }
 
   <div class="project">
     <div class="project-image">
-      <img src="assetsc/Artworks/desperate1.png" alt="In Desperate Need of a Job">
+      <img src="assetsc/Artworks/desperate1.webp" alt="In Desperate Need of a Job">
     </div>
     <div class="project-overlay">
       <h3>In Desperate Need of a Job</h3>
@@ -779,7 +779,7 @@ section h2 { color: #000; }
 
   <div class="project">
     <div class="project-image">
-      <img src="assetsc/Artworks/pov1.png" alt="POV">
+      <img src="assetsc/Artworks/pov1.webp" alt="POV">
     </div>
     <div class="project-overlay">
       <h3>POV</h3>
@@ -829,25 +829,26 @@ window.addEventListener('scroll', () => {
 });
 
 // --- Poster deck sticky scroll ---
-// Wrapper and sticky #posters are already in the HTML — JS only sets wrapper height and animates.
 (function() {
   const wrapper = document.getElementById('posterWrapper');
   const container = document.getElementById('posterScroll');
   if (!wrapper || !container) return;
 
   const items = Array.from(container.querySelectorAll('.poster-item'));
-  const W = 260 + 8;
+
+  // End state: posters just barely not overlapping (260px wide + 10px gap = 270px apart)
+  const END_OFFSET = 270;
 
   items.forEach((item, i) => { item.style.zIndex = i + 1; });
 
   function render(p) {
     const acc = Math.pow(p, 2);
     items.forEach((item, i) => {
-      item.style.transform = 'translateX(' + (i * W * acc) + 'px)';
+      item.style.transform = 'translateX(' + (i * END_OFFSET * acc) + 'px)';
     });
   }
 
-  const ZONE = window.innerHeight * 3;
+  const ZONE = window.innerHeight * 2;
   wrapper.style.height = (ZONE + window.innerHeight) + 'px';
 
   window.addEventListener('scroll', function() {
