@@ -56,28 +56,38 @@ section {
   justify-content: center;
 }
 
-#curation {
+#pessima {
   flex-direction: column;
   padding: 60px 0;
   background: #fff;
-}
-
-#graphic-design {
-  flex-direction: column;
-  padding: 60px 0;
-  background: #fafafa;
-}
-
-#art-direction {
-  flex-direction: column;
-  padding: 60px 0;
-  background: #fff;
+  align-items: flex-start;
+  overflow: hidden;
 }
 
 #photography {
   flex-direction: column;
   padding: 60px 0;
   background: #fafafa;
+  align-items: flex-start;
+}
+
+#graphic-design {
+  flex-direction: column;
+  padding: 60px 0;
+  background: #fff;
+  align-items: flex-start;
+}
+
+#curation {
+  flex-direction: column;
+  padding: 60px 0;
+  background: #fafafa;
+}
+
+#artworks {
+  flex-direction: column;
+  padding: 60px 0;
+  background: #fff;
 }
 
 section h2 {
@@ -90,6 +100,19 @@ section h2 {
   align-self: flex-start;
   padding: 0 30px;
   width: 100%;
+}
+
+/* subsection label */
+.subsection-label {
+  font-size: 11px;
+  font-weight: 400;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 0 30px;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 60px;
 }
 
 /* --- HERO SECTION --- */
@@ -116,14 +139,6 @@ section h2 {
   margin-bottom: 40px;
   margin-top: 180px;
   font-weight: 400;
-}
-
-#hero .bio {
-  max-width: 800px;
-  font-size: 32px;
-  line-height: 39px;
-  color: #333;
-  font-weight: normal;
 }
 
 /* --- ABOUT SECTION --- */
@@ -158,44 +173,7 @@ section h2 {
   font-weight: normal;
 }
 
-#about .collaborations {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-#about .collab-section h3 {
-  font-size: 32px;
-  font-weight: 400;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-}
-
-#about .collab-section p {
-  font-size: 32px;
-  line-height: 39px;
-  color: #333;
-  font-weight: normal;
-}
-
-/* --- PROJECTS SECTION --- */
-#projects {
-  flex-direction: column;
-  padding: 100px 30px;
-}
-
-#projects h2 {
-  font-size: 32px;
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 60px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  align-self: flex-start;
-}
-
+/* --- PROJECT (full page) --- */
 .project {
   width: 100%;
   position: relative;
@@ -307,15 +285,7 @@ section h2 { color: #000; }
 #contact a { color: #000; }
 #contact a:hover { color: #555; }
 
-/* --- PESSIMA GALLERY --- */
-#pessima {
-  flex-direction: column;
-  padding: 60px 0;
-  background: #fff;
-  align-items: flex-start;
-  overflow: hidden;
-}
-
+/* --- GALLERY SCROLL (Pessima + Logos) --- */
 #pessima h2 {
   padding: 0 30px;
   width: 100%;
@@ -371,20 +341,22 @@ section h2 { color: #000; }
   line-height: 1.4;
 }
 
-/* --- POSTERS SECTION --- */
-#posters {
-  flex-direction: column;
-  padding: 60px 0;
-  background: #fafafa;
-  align-items: flex-start;
-  overflow: hidden;
-  min-height: unset !important;
+/* --- POSTER WRAPPER --- */
+#posterWrapper {
+  position: relative;
   width: 100%;
-  height: auto;
+  /* height set by JS */
 }
 
-#posters h2 {
-  padding: 0 30px;
+/* --- POSTERS (sticky inside wrapper) --- */
+#posters {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 60px 0;
+  background: #fff;
   width: 100%;
 }
 
@@ -410,6 +382,28 @@ section h2 { color: #000; }
   display: block;
 }
 
+/* --- WEBSITES --- */
+.websites-list {
+  padding: 0 30px;
+  width: 100%;
+}
+
+.websites-list a {
+  display: block;
+  font-size: 32px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  transition: color 0.2s ease;
+}
+
+.websites-list a:hover {
+  color: #555;
+}
 
 /* --- CONTACT SECTION --- */
 #contact {
@@ -443,25 +437,53 @@ section h2 { color: #000; }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  #hero h1 {
-    font-size: 32px;
-  }
-  
-  .project {
-    grid-template-columns: 1fr;
-  }
-  
-  .project:nth-child(even) .project-info {
-    order: 0;
-  }
-  
-  #about .collaborations {
-    grid-template-columns: 1fr;
-  }
+  #hero h1 { font-size: 32px; }
+  .project { grid-template-columns: 1fr; }
+  .project:nth-child(even) .project-info { order: 0; }
+  #about .collaborations { grid-template-columns: 1fr; }
+  #top { width: calc(100% - 20px); }
+}
 
-  #top {
-    width: calc(100% - 20px);
-  }
+/* --- PHOTO GRID --- */
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.photo-grid img {
+  width: calc(25% - 5px);
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.photo-grid img:hover { opacity: 0.85; }
+
+/* --- LIGHTBOX --- */
+#photo-lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.97);
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#photo-lightbox.open { display: flex; }
+
+#lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
 }
 </style>
 </head>
@@ -472,12 +494,12 @@ section h2 { color: #000; }
 </div>
 <div id="page-wrapper">
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section id="hero">
   <div class="subtitle">Curator • Graphic Designer • Web Developer • Photographer</div>
 </section>
 
-<!-- ABOUT SECTION -->
+<!-- ABOUT -->
 <section id="about">
   <h2>About</h2>
   <div class="content">
@@ -488,106 +510,193 @@ section h2 { color: #000; }
   </div>
 </section>
 
-<!-- PESSIMA SECTION -->
+<!-- 1. PESSIMA -->
 <section id="pessima">
   <h2>Pessima</h2>
   <div class="gallery-scroll">
-
     <div class="gallery-item">
-      <img src="assetsc/DSC01081.jpg" alt="Jenna Marvin">
+      <img src="assetsc/Images/DSC01081 1.webp" alt="Jenna Marvin">
       <div class="gallery-item-info">
         <h3>Jenna Marvin</h3>
         <div class="role">Vol. 2 • 2024 • Paris, France</div>
       </div>
     </div>
-
     <div class="gallery-item">
-      <img src="assetsc/Image 7-16-24 at 6.55 PM (2).jpeg" alt="Vampy">
+      <img src="assetsc/Images/Image 7-16-24 at 6.55 PM (2) 1.webp" alt="Vampy">
       <div class="gallery-item-info">
         <h3>Vampy</h3>
         <div class="role">Vol. 2 • 2024 • Los Angeles</div>
       </div>
     </div>
-
     <div class="gallery-item">
-      <img src="assetsc/PESSIMA 32f.png" alt="2dual">
+      <img src="assetsc/Images/PESSIMA 32f 1.webp" alt="2dual">
       <div class="gallery-item-info">
         <h3>2dual</h3>
         <div class="role">Vol. 2 • 2024 • Melbourne, Australia</div>
       </div>
     </div>
-
     <div class="gallery-item">
-      <img src="assetsc/DSC04012.jpeg" alt="Opia">
+      <img src="assetsc/Images/DSC04012 1.webp" alt="Opia">
       <div class="gallery-item-info">
         <h3>Opia</h3>
         <div class="role">Vol. 2 • 2024 • Milan, Italy</div>
       </div>
     </div>
-
     <div class="gallery-item">
-      <img src="assetsc/WhatsApp Image 2025-01-30 at 16.49.06.jpeg" alt="Aun Helden">
+      <img src="assetsc/Images/WhatsApp Image 2025-01-30 at 16.49.06 1.webp" alt="Aun Helden">
       <div class="gallery-item-info">
         <h3>Aun Helden</h3>
         <div class="role">Vol. 1 • 2023 • Brazil</div>
       </div>
     </div>
-
     <div class="gallery-item">
-      <img src="assetsc/phil00301 copia.jpg" alt="Ivy Chilelli">
+      <img src="assetsc/Images/phil00301 copia 1.webp" alt="Ivy Chilelli">
       <div class="gallery-item-info">
         <h3>Ivy Chilelli</h3>
         <div class="role">Vol. 1 • 2023 • Milan, Italy</div>
       </div>
     </div>
-
     <div class="gallery-item">
-      <img src="assetsc/DSC01637.JPG" alt="Enya">
+      <img src="assetsc/Images/DSC01637 1.webp" alt="Enya">
       <div class="gallery-item-info">
         <h3>Enya</h3>
         <div class="role">Vol. 0 • 2021 • Milan, Italy</div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- POSTERS SECTION -->
-<section id="posters">
-  <h2>Posters</h2>
-  <div class="poster-scroll" id="posterScroll">
-    <div class="poster-item"><img src="assetsc/Posters/poster-01.webp" alt="Poster 01"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-02.webp" alt="Poster 02"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-03.webp" alt="Poster 03"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-04.webp" alt="Poster 04"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-05.webp" alt="Poster 05"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-06.webp" alt="Poster 06"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-07.webp" alt="Poster 07"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-08.webp" alt="Poster 08"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-09.webp" alt="Poster 09"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-10.webp" alt="Poster 10"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-11.webp" alt="Poster 11"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-12.webp" alt="Poster 12"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-13.webp" alt="Poster 13"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-14.webp" alt="Poster 14"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-15.webp" alt="Poster 15"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-16.webp" alt="Poster 16"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-17.webp" alt="Poster 17"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-18.webp" alt="Poster 18"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-19.webp" alt="Poster 19"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-20.webp" alt="Poster 20"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-21.webp" alt="Poster 21"></div>
-    <div class="poster-item"><img src="assetsc/Posters/poster-22.webp" alt="Poster 22"></div>
+<!-- 2. PHOTOGRAPHY -->
+<section id="photography">
+  <h2>Photography</h2>
+  <div class="photo-grid">
+    <img src="assetsc/Photography/photography01.webp" alt="Photo 01">
+    <img src="assetsc/Photography/photography02.webp" alt="Photo 02">
+    <img src="assetsc/Photography/photography03.webp" alt="Photo 03">
+    <img src="assetsc/Photography/photography04.webp" alt="Photo 04">
+    <img src="assetsc/Photography/photography05.webp" alt="Photo 05">
+    <img src="assetsc/Photography/photography06.webp" alt="Photo 06">
+    <img src="assetsc/Photography/photography07.webp" alt="Photo 07">
+    <img src="assetsc/Photography/photography08.webp" alt="Photo 08">
+    <img src="assetsc/Photography/photography09.webp" alt="Photo 09">
+    <img src="assetsc/Photography/photography10.webp" alt="Photo 10">
+    <img src="assetsc/Photography/photography11.webp" alt="Photo 11">
+    <img src="assetsc/Photography/photography12.webp" alt="Photo 12">
   </div>
 </section>
 
-<!-- CURATION SECTION -->
+<!-- PHOTO LIGHTBOX -->
+<div id="photo-lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- 3. GRAPHIC DESIGN -->
+<section id="graphic-design">
+  <h2>Graphic Design</h2>
+
+  <!-- POSTERS — first subsection. Wrapper + sticky div already in HTML, JS only sets height & animates. -->
+  <div class="subsection-label" style="margin-top:0;">Posters</div>
+
+  <div id="posterWrapper">
+    <div id="posters">
+      <div class="poster-scroll" id="posterScroll">
+        <div class="poster-item"><img src="assetsc/Posters/poster-01.webp" alt="Poster 01"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-02.webp" alt="Poster 02"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-03.webp" alt="Poster 03"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-04.webp" alt="Poster 04"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-05.webp" alt="Poster 05"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-06.webp" alt="Poster 06"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-07.webp" alt="Poster 07"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-08.webp" alt="Poster 08"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-09.webp" alt="Poster 09"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-10.webp" alt="Poster 10"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-11.webp" alt="Poster 11"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-12.webp" alt="Poster 12"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-13.webp" alt="Poster 13"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-14.webp" alt="Poster 14"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-15.webp" alt="Poster 15"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-16.webp" alt="Poster 16"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-17.webp" alt="Poster 17"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-18.webp" alt="Poster 18"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-19.webp" alt="Poster 19"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-20.webp" alt="Poster 20"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-21.webp" alt="Poster 21"></div>
+        <div class="poster-item"><img src="assetsc/Posters/poster-22.webp" alt="Poster 22"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKS -->
+  <div class="subsection-label">Books</div>
+
+  <div class="gallery-item" style="flex: 0 0 100%; width: 100%;">
+    <img src="assetsc/Books/autostraddle.png" alt="Autostraddle Magazine" style="width:100%; height:auto; display:block;">
+    <div class="gallery-item-info" style="padding: 12px 30px 0 30px;">
+      <h3>Autostraddle Magazine</h3>
+      <div class="role">Art Direction & Graphic Design</div>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="flex: 0 0 100%; width: 100%; margin-top: 40px;">
+    <img src="assetsc/Books/pessima.png" alt="Pessima Magazine" style="width:100%; height:auto; display:block;">
+    <div class="gallery-item-info" style="padding: 12px 30px 0 30px;">
+      <h3>Pessima Magazine</h3>
+      <div class="role">Creative Director & Chief Editor • 2020-Present</div>
+    </div>
+  </div>
+
+  <!-- LOGOS -->
+  <div class="subsection-label">Logos</div>
+
+  <div class="gallery-scroll">
+    <div class="gallery-item">
+      <img src="assetsc/Logos/4k.svg" alt="4K">
+      <div class="gallery-item-info">
+        <h3>4K</h3>
+        <div class="role">Logo & Brand Identity</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="assetsc/Logos/pessima.png" alt="Pessima">
+      <div class="gallery-item-info">
+        <h3>Pessima</h3>
+        <div class="role">Logo & Brand Identity</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="assetsc/Logos/sperm.png" alt="Sperm Studios">
+      <div class="gallery-item-info">
+        <h3>Sperm Studios</h3>
+        <div class="role">Logo & Brand Identity</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="assetsc/Logos/dysphoria.png" alt="Dysphoria">
+      <div class="gallery-item-info">
+        <h3>Dysphoria</h3>
+        <div class="role">Logo & Brand Identity</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEBSITES -->
+  <div class="subsection-label">Websites</div>
+
+  <div class="websites-list">
+    <a href="https://hg-lf.com" target="_blank">HG-LF.com</a>
+    <a href="https://simonacoltello.com" target="_blank">Simonacoltello.com</a>
+    <a href="https://pessimart.com" target="_blank">Pessimart.com</a>
+  </div>
+
+</section>
+
+<!-- 4. CURATION -->
 <section id="curation">
   <h2>Curation</h2>
-  
+
   <div class="project">
     <div class="project-image">
-      <img src="assetsc/20250410_103929.jpg" alt="4K: Touching Grass in Ultra HD">
+      <img src="assetsc/Images/20250410_103929 1.webp" alt="4K: Touching Grass in Ultra HD">
     </div>
     <div class="project-overlay">
       <h3>4K: Touching Grass in Ultra HD</h3>
@@ -595,10 +704,10 @@ section h2 { color: #000; }
       <p>A collective exhibition reflecting on artificial means of utopian life. Digital Art, Early AI and 3D sculpture explored dystopian imaginaries. Featured artists: Eva & Franco Mattes, Alfred Francis Pietroni, Jenia Filatova, Lars Larkin, Nelson Gutjahr, and more. BiM Milano, March-April 2025.</p>
     </div>
   </div>
-  
+
   <div class="project">
     <div class="project-image">
-      <img src="assetsc/DSC03973-scaled.jpg" alt="Opia by Opia">
+      <img src="assetsc/Images/DSC03973-scaled 1.webp" alt="Opia by Opia">
     </div>
     <div class="project-overlay">
       <h3>Opia by Opia</h3>
@@ -606,10 +715,10 @@ section h2 { color: #000; }
       <p>Solo exhibition by artist Opia exploring themes of identity and transformation through performance and installation. BiM Milano, October 2024.</p>
     </div>
   </div>
-  
+
   <div class="project">
     <div class="project-image">
-      <img src="assetsc/_DSF5861c.jpg" alt="Apokalypsis Eschaton">
+      <img src="assetsc/Images/_DSF5861c 1.webp" alt="Apokalypsis Eschaton">
     </div>
     <div class="project-overlay">
       <h3>Apokalypsis Eschaton</h3>
@@ -617,10 +726,10 @@ section h2 { color: #000; }
       <p>Solo exhibition by Lux Aeterna exploring apocalyptic themes and transformation. Co-curated with Marte Gastaldello. Fondoluogo, February 2024.</p>
     </div>
   </div>
-  
+
   <div class="project">
     <div class="project-image">
-      <img src="assetsc/DSF2263-scaled.jpg" alt="Devonian Mater">
+      <img src="assetsc/Images/DSF2263-scaled 1.webp" alt="Devonian Mater">
     </div>
     <div class="project-overlay">
       <h3>Devonian Mater</h3>
@@ -628,135 +737,64 @@ section h2 { color: #000; }
       <p>Solo exhibition by Ivy Chilelli exploring biomechanics and the evolving body through sculpture and installation. BiM Milano, December 2023.</p>
     </div>
   </div>
+
 </section>
 
-<!-- GRAPHIC DESIGN SECTION -->
-<section id="graphic-design">
-  <h2>Graphic Design</h2>
-  
-  <div class="project">
-    <div class="project-image">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23fff' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23000' font-family='Arial' font-size='36' font-weight='300'%3EPESSIMA%3C/text%3E%3C/svg%3E" alt="Pessima Magazine">
-    </div>
-    <div class="project-overlay">
-      <h3>Pessima Magazine</h3>
-      <div class="role">Creative Director & Chief Editor • 2020-Present</div>
-      <p>Trans Art* Magazine & Non Profit Association. Annual publication exploring Trans* identities. 300 pages, 8 editorials, 50+ artists per volume. Sewn binding, A4 format. Featured: Jenna Marvin, 2 dual, Opia, Lux Aeterna, E.R. Fightmaster, Vampy.</p>
-    </div>
-  </div>
-  
-  <div class="project">
-    <div class="project-image">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f0f0f0' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23000' font-family='Arial' font-size='28' font-weight='300'%3EAutostraddle%3C/text%3E%3C/svg%3E" alt="Autostraddle Magazine">
-    </div>
-    <div class="project-overlay">
-      <h3>Autostraddle Magazine</h3>
-      <div class="role">Art Direction & Graphic Design</div>
-      <p>Editorial design and art direction for features exploring LGBTQ+ culture, identity, and contemporary issues for the independent queer publication.</p>
-    </div>
-  </div>
-  
-  <div class="project">
-    <div class="project-image">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23000' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-family='Arial' font-size='32' font-weight='300'%3EPOSTERS%3C/text%3E%3C/svg%3E" alt="Exhibition Posters">
-    </div>
-    <div class="project-overlay">
-      <h3>Exhibition Graphics</h3>
-      <div class="role">Graphic Designer</div>
-      <p>Visual identity and promotional materials for 20+ exhibitions and events including 4K, Pessima releases, Euphoria, and various artist showcases. 2020-Present.</p>
-    </div>
-  </div>
-  
-  <div class="project">
-    <div class="project-image">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23fff' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23000' font-family='Arial' font-size='28' font-weight='300'%3ELOGOS%3C/text%3E%3C/svg%3E" alt="Logo Design">
-    </div>
-    <div class="project-overlay">
-      <h3>Brand Identity</h3>
-      <div class="role">Logo Designer</div>
-      <p>Logo and brand identity design for Pessima, Sperm Studios, 4K, Marciona, GIU, and various cultural projects.</p>
-    </div>
-  </div>
-</section>
+<!-- 5. ARTWORKS -->
+<section id="artworks">
+  <h2>Artworks</h2>
 
-<!-- ART DIRECTION SECTION -->
-<section id="art-direction">
-  <h2>Art Direction</h2>
-  
   <div class="project">
     <div class="project-image">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23000' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-family='Arial' font-size='28' font-weight='300'%3EHGLF%3C/text%3E%3C/svg%3E" alt="HGLF">
+      <img src="assetsc/Artworks/Bandiera1.JPG" alt="No room for effortless conversation">
     </div>
     <div class="project-overlay">
-      <h3>HG / LF</h3>
-      <div class="role">Creative Direction</div>
-      <p>A home base of dissent—an agglomerate where atelier and community converge. Creating wearable armor-forms of protection designed to safeguard vulnerable areas from oppressive social order. Project curated by Simona Coltello.</p>
+      <h3>No room for effortless conversation</h3>
+      <div class="role">Artwork • 2024</div>
+      <p>On the occasion of the end of the Specific Residence at BiM Milano, Simona collaborated with artist Marte Gastaldello on the creation of a collective work of public art, which will be installed on the facade of the construction site of the Pirelli building in front of BiM. It will be a large white flag on which a black text is printed, written in a moment of meeting and discussion between Marte, Simona and other people from the community.<br><br>The intervention starts from a reflection on the concept of the flag as an object capable of conveying an identity, both personal and collective. In dealing with this mechanism, Marte and Simona chose to create their own language starting from the one used in the posters found at the entrance to collective spaces, clubs and all other community centers. This is a well-defined code, which is used to communicate to those crossing that they are entering a safe space, in which their identity will not be questioned or questioned in any way. This language is taken, taken out of its context and abstracted in the form of the flag until it arrives at a graphic form which, in visual contrast with what inspired it, has no personal and emotional sign other than that expressed by the words themselves.<br><br>The intervention is inspired by the importance of language in the construction of an identity. In returning to BiM a trace of their passage, Marte and Simona want to bring a look into their microcosm to the building: the sign of a collective body that feels safe in its existence.<br><br>27 x 7m • 100% poliestere Pongè<br><br>On Display at Manifattura Tabacchi (FI), BASE (MI), BiM (MI)</p>
     </div>
   </div>
-  
-  <div class="project">
-    <div class="project-image">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f0f0f0' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23000' font-family='Arial' font-size='20' font-weight='300'%3ECOLLABORATIONS%3C/text%3E%3C/svg%3E" alt="Brand Collaborations">
-    </div>
-    <div class="project-overlay">
-      <h3>Brand Collaborations</h3>
-      <div class="role">Art Direction</div>
-      <p>Creative direction for brands including HGLF, Iuter, Octopus, Marcelo Burlon, For Them, Magliano, and cultural institutions like BASE Milano, NABA, Manifattura Tabacchi.</p>
-    </div>
-  </div>
-</section>
 
-<!-- PHOTOGRAPHY SECTION -->
-<section id="photography">
-  <h2>Photography</h2>
-  
   <div class="project">
     <div class="project-image">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23000' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-family='Arial' font-size='28' font-weight='300'%3EEDITORIAL%3C/text%3E%3C/svg%3E" alt="Editorial Photography">
+      <img src="assetsc/Artworks/Touching1.jpg" alt="Touching Grass/Sand in Ultra HD">
     </div>
     <div class="project-overlay">
-      <h3>Editorial Photoshoots</h3>
-      <div class="role">Art Director & Producer</div>
-      <p>Art direction and production for editorial photoshoots exploring themes of transformation, identity, and post-human aesthetics. Featured in Pessima Magazine and various publications.</p>
+      <h3>Touching Grass/Sand in Ultra HD</h3>
+      <div class="role">Artwork • 2025</div>
+      <p>"4K: Touching Grass in Ultra HD is a collective exhibit, curated by Simona Coltello, that reflects on artificial means of utopian life. Post Internet research, Early AI and 3D sculpture will be the main focuses to explore dystopian imaginaries, (chronically) online aesthetic influences, final-stage consumerism and promethean corruption of the artists' depiction of beauty."<br><br>Simona's work is the starting point from which the whole collective exhibition has came to life. The two natural rooms reflect the dystopian human instict to recreate nature with artificial means. Ambient Soundscapes, Fireplace Videos, Fake Plants, Indoor Climbing and Stars' Projections are all daily instruments from which the artist took inspiration in the creation of these natural environments. Humans have reached a point in which they would rather recreate nature than preserve it.<br><br>Collective Exhibition with: Alfred Francis Pietroni, Anais Bianca Beltrame, Bautista Botto Barili, Covid Room, Dorsa Rafiee, Eyeguys, Eva & Franco Mattes, Francesco Saverio Tani, Jenia Filatova, Lars Larkin, Nelson Gutjahr, Simona Coltello, Simone Restifo Pilato, x.luna<br><br>29th March – 05 April • 19.00–21.00<br>1000kg of Soil • 25x25m</p>
     </div>
   </div>
-  
-  <div class="project">
-    <div class="project-image">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23fff' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23000' font-family='Arial' font-size='24' font-weight='300'%3EARTIST PORTRAITS%3C/text%3E%3C/svg%3E" alt="Artist Documentation">
-    </div>
-    <div class="project-overlay">
-      <h3>Artist Documentation</h3>
-      <div class="role">Photographer & Art Director</div>
-      <p>Documentation and portrait photography for artists including Gena Marvin, Salvia, Alfred Francis Pietroni, Opia, Vampy, Bones Tan Jones, and more.</p>
-    </div>
-  </div>
-  
-  <div class="project">
-    <div class="project-image">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f0f0f0' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23000' font-family='Arial' font-size='24' font-weight='300'%3EEXHIBITIONS%3C/text%3E%3C/svg%3E" alt="Exhibition Photography">
-    </div>
-    <div class="project-overlay">
-      <h3>Exhibition Photography</h3>
-      <div class="role">Photographer</div>
-      <p>Documentation of exhibitions and events including installation views, performances, and opening receptions for BiM Milano, BASE Milano, and independent spaces.</p>
-    </div>
-  </div>
-</section>
 
-<!-- CONTACT SECTION -->
-<section id="contact">
-  <h2>Get in Touch</h2>
-  <a href="/cdn-cgi/l/email-protection#087b61656766696b67647c6d646467486f65696164266b6765"><span class="__cf_email__" data-cfemail="1e6d777371707f7d71726a7b7272715e79737f7772307d7173">[email&#160;protected]</span></a>
-  <a href="https://www.instagram.com/simonacoltello" target="_blank">Instagram</a>
-</section>
+  <div class="project">
+    <div class="project-image">
+      <img src="assetsc/Artworks/desperate1.png" alt="In Desperate Need of a Job">
+    </div>
+    <div class="project-overlay">
+      <h3>In Desperate Need of a Job</h3>
+      <div class="role">Artwork • 2024</div>
+      <p>On Display at BiM (MI) for Bim Bum Bam by Kenny Alexander Laurence<br><br>"Il discorso si centra su un'Italia in divenire, meticcia, sessualmente libera e digitalizzata che, seppur minoritaria, si articola nel rapido e costante rimescolamento di una grande città europea attraversata da flutti planetari. Bim Bum Bam è un'onomatopea, la sonorità di una sequenza di azioni. Suoni che, rappresentati graficamente sulla pagina di un fumetto, veicolano sia una simultaneità che una consequenzialità di istanze. Un fermento scritto che scandisce il ritmo di una coreografia, o meglio, di una lotta generazionale combattuta per le sorti del mondo."<br><br>Con Opere di Ludovica Anversa, Nicola Bianco, Mara Callegaro, Federico Carena, Simona Coltello, Nicole Colombo, Riccardo De Biasi, Camilla De Siati, Valentina De Zanche, Alice Fiorelli, Martina Ferrari, Marte Livio, Lorenzo Schetter Li Greci, Alessandro Macciardi, Marcello Maranzan, Rebecca Momoli, Marvin Gabriele Nwachukwu, Marco Resta, Fabiola Skraqi, Mario Uliassi, Alejandra Varela Perera, Pietro Vedovato e Federico Zeltman.<br><br>Blueback Print</p>
+    </div>
+  </div>
 
-<!-- PROJECT PREVIEW -->
+  <div class="project">
+    <div class="project-image">
+      <img src="assetsc/Artworks/pov1.png" alt="POV">
+    </div>
+    <div class="project-overlay">
+      <h3>POV</h3>
+      <div class="role">Artwork • 2022</div>
+      <p>Shot in VHS, 4:3, 3 mins loop.<br><br>The eye/camera of the artist uncovers the point of view of the participants of Trans* rights protests in Milan. The dehumanizing gaze of the cameras is exposed and overthrown by the choice of making them the subject, and victim, of this video.<br><br>Displayed at Base Milano (2023), Bim Milano (2023).</p>
+    </div>
+  </div>
+
+</section>
 <div id="project-preview">
   <img id="preview-img" src="" alt="">
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// --- Project overlay ---
 const preview = document.getElementById('project-preview');
 const previewImg = document.getElementById('preview-img');
 const fixedLogo = document.getElementById('fixed-logo');
@@ -764,14 +802,10 @@ let activeProject = null;
 
 document.querySelectorAll('.project').forEach(project => {
   project.addEventListener('click', () => {
-    if (activeProject === project) {
-      closePreview(project);
-      return;
-    }
+    if (activeProject === project) { closePreview(project); return; }
     if (activeProject) activeProject.classList.remove('active');
     activeProject = project;
     project.classList.add('active');
-
     const img = project.querySelector('.project-image img');
     previewImg.src = img ? img.src : '';
     fixedLogo.style.opacity = '0';
@@ -779,9 +813,7 @@ document.querySelectorAll('.project').forEach(project => {
   });
 });
 
-preview.addEventListener('click', () => {
-  if (activeProject) closePreview(activeProject);
-});
+preview.addEventListener('click', () => { if (activeProject) closePreview(activeProject); });
 
 function closePreview(project) {
   project.classList.remove('active');
@@ -793,44 +825,30 @@ function closePreview(project) {
 window.addEventListener('scroll', () => {
   if (!activeProject) return;
   const rect = activeProject.getBoundingClientRect();
-  if (rect.bottom < 0 || rect.top > window.innerHeight) {
-    closePreview(activeProject);
-  }
+  if (rect.bottom < 0 || rect.top > window.innerHeight) closePreview(activeProject);
 });
 
-// Poster deck
+// --- Poster deck sticky scroll ---
+// Wrapper and sticky #posters are already in the HTML — JS only sets wrapper height and animates.
 (function() {
-  if (document.getElementById('posterWrapper')) return;
-  const section = document.getElementById('posters');
+  const wrapper = document.getElementById('posterWrapper');
   const container = document.getElementById('posterScroll');
-  if (!section || !container) return;
+  if (!wrapper || !container) return;
 
   const items = Array.from(container.querySelectorAll('.poster-item'));
-  const N = items.length;
-  const W = 260 + 8; // poster width + gap
+  const W = 260 + 8;
 
-  // poster-22 (i=N-1) on top, poster-01 (i=0) on bottom
   items.forEach((item, i) => { item.style.zIndex = i + 1; });
 
   function render(p) {
-    const accelerated = Math.pow(p, 2);
+    const acc = Math.pow(p, 2);
     items.forEach((item, i) => {
-      // at p=0: all stacked at 0
-      // at p=1: spread fully apart, each at i * W
-      const x = i * W * accelerated;
-      item.style.transform = 'translateX(' + x + 'px)';
+      item.style.transform = 'translateX(' + (i * W * acc) + 'px)';
     });
   }
 
   const ZONE = window.innerHeight * 3;
-  const wrapper = document.createElement('div');
-  wrapper.id = 'posterWrapper';
   wrapper.style.height = (ZONE + window.innerHeight) + 'px';
-  wrapper.style.position = 'relative';
-  section.parentNode.insertBefore(wrapper, section);
-  wrapper.appendChild(section);
-  section.style.position = 'sticky';
-  section.style.top = '0';
 
   window.addEventListener('scroll', function() {
     const scrolled = Math.max(0, -wrapper.getBoundingClientRect().top);
@@ -838,7 +856,24 @@ window.addEventListener('scroll', () => {
   }, { passive: true });
 
   render(0);
-})();</script>
-</div><!-- end page-wrapper -->
+})();
+
+// --- Photo lightbox ---
+(function() {
+  const lightbox = document.getElementById('photo-lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.photo-grid img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      lbImg.src = img.src;
+      lightbox.classList.add('open');
+    });
+  });
+  lightbox.addEventListener('click', function() {
+    lightbox.classList.remove('open');
+    lbImg.src = '';
+  });
+})();
+</script>
+</div>
 </body>
 </html>
