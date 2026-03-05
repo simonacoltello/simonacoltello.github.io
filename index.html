@@ -375,6 +375,7 @@ section h2 { color: #000; }
   position: absolute;
   top: 0;
   will-change: transform;
+  cursor: pointer;
 }
 
 .poster-item img {
@@ -382,6 +383,56 @@ section h2 { color: #000; }
   height: 325px;
   object-fit: fill;
   display: block;
+  transition: opacity 0.2s ease;
+}
+
+.poster-item:hover img {
+  opacity: 0.85;
+}
+
+/* --- POSTER LIGHTBOX --- */
+#poster-lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.97);
+  z-index: 999999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#poster-lightbox.open {
+  display: flex;
+}
+
+#poster-lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+  /* subtle fade-in */
+  animation: posterFadeIn 0.25s ease forwards;
+}
+
+@keyframes posterFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* close hint */
+#poster-lightbox::after {
+  content: 'Click to close';
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #000;
+  opacity: 0.4;
+  font-family: 'founders-grotesk', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
 /* --- WEBSITES --- */
@@ -596,7 +647,7 @@ section h2 { color: #000; }
 <section id="graphic-design">
   <h2>Graphic Design</h2>
 
-  <!-- POSTERS — first subsection. Wrapper + sticky div already in HTML, JS only sets height & animates. -->
+  <!-- POSTERS -->
   <div class="subsection-label" style="margin-top:0;">Posters</div>
 
   <div id="posterWrapper">
@@ -631,18 +682,96 @@ section h2 { color: #000; }
   <!-- BOOKS -->
   <div class="subsection-label">Books</div>
 
-  <div style="width:100%; position:relative; margin:0; padding:0;">
-    <img src="assetsc/Books/autostraddle.png" alt="Autostraddle Magazine" style="width:100%; height:auto; display:block;">
-    <div style="position:absolute; bottom:0; left:0; padding:8px 30px; mix-blend-mode:exclusion; line-height:1.2;">
-      <h3 style="font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:1px; color:#fff; margin-bottom:2px;">Autostraddle Magazine</h3><div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#fff;">Art Direction & Graphic Design</div>
+  <!-- PESSIMA MAGAZINE -->
+  <div style="padding: 0 30px; width:100%; margin-bottom: 16px;">
+    <h3 style="font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:1px; margin-bottom:2px;">Pessima Magazine</h3>
+    <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#000;">Creative Director & Chief Editor</div>
+  </div>
+
+  <!-- Smalls row 1: 2 images -->
+  <div style="display:flex; flex-wrap:wrap; gap:6px; padding:0 30px; width:100%; box-sizing:border-box; margin-bottom:6px;">
+    <img src="assetsc/Books/pessima small 1.png" alt="Pessima page 1" style="width:calc(50% - 3px); height:auto; display:block;">
+    <img src="assetsc/Books/pessima small 2.png" alt="Pessima page 2" style="width:calc(50% - 3px); height:auto; display:block;">
+  </div>
+
+  <!-- Three bigs side by side -->
+  <div style="display:flex; flex-wrap:wrap; gap:6px; padding:0 30px; width:100%; box-sizing:border-box; margin-bottom:6px;">
+    <img src="assetsc/Books/pessima big 1.png" alt="Pessima spread 1" style="width:calc(33.333% - 4px); height:auto; display:block;">
+    <img src="assetsc/Books/pessima big 2.png" alt="Pessima spread 2" style="width:calc(33.333% - 4px); height:auto; display:block;">
+    <img src="assetsc/Books/pessima big 3.png" alt="Pessima spread 3" style="width:calc(33.333% - 4px); height:auto; display:block;">
+  </div>
+
+  <!-- Smalls row 2: 2 images -->
+  <div style="display:flex; flex-wrap:wrap; gap:6px; padding:0 30px; width:100%; box-sizing:border-box;">
+    <img src="assetsc/Books/pessima small 3.png" alt="Pessima page 3" style="width:calc(50% - 3px); height:auto; display:block;">
+    <img src="assetsc/Books/pessima small 4.png" alt="Pessima page 4" style="width:calc(50% - 3px); height:auto; display:block;">
+  </div>
+
+  <!-- AUTOSTRADDLE MAGAZINE -->
+  <div style="padding: 0 30px; width:100%; margin-bottom: 16px; margin-top: 60px;">
+    <h3 style="font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:1px; margin-bottom:2px;">Autostraddle Magazine</h3>
+    <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#000;">Art Direction & Graphic Design</div>
+  </div>
+
+  <!-- Smalls row 1: 2 images -->
+  <div style="display:flex; flex-wrap:wrap; gap:6px; padding:0 30px; width:100%; box-sizing:border-box; margin-bottom:6px;">
+    <img src="assetsc/Books/Autostraddle small 1.png" alt="Autostraddle page 1" style="width:calc(50% - 3px); height:auto; display:block;">
+    <img src="assetsc/Books/autostraddle small 2.png" alt="Autostraddle page 2" style="width:calc(50% - 3px); height:auto; display:block;">
+  </div>
+
+  <!-- Three bigs side by side -->
+  <div style="display:flex; flex-wrap:wrap; gap:6px; padding:0 30px; width:100%; box-sizing:border-box; margin-bottom:6px;">
+    <img src="assetsc/Books/autostraddle big 1.png" alt="Autostraddle spread 1" style="width:calc(33.333% - 4px); height:auto; display:block;">
+    <img src="assetsc/Books/autostraddle big 2.png" alt="Autostraddle spread 2" style="width:calc(33.333% - 4px); height:auto; display:block;">
+    <img src="assetsc/Books/autostraddle big 3.png" alt="Autostraddle spread 3" style="width:calc(33.333% - 4px); height:auto; display:block;">
+  </div>
+
+  <!-- Smalls row 2: 2 images -->
+  <div style="display:flex; flex-wrap:wrap; gap:6px; padding:0 30px; width:100%; box-sizing:border-box;">
+    <img src="assetsc/Books/autostraddle small 3.png" alt="Autostraddle page 3" style="width:calc(50% - 3px); height:auto; display:block;">
+    <img src="assetsc/Books/autostraddle small 4.png" alt="Autostraddle page 4" style="width:calc(50% - 3px); height:auto; display:block;">
+  </div>
+
+  <!-- ALIEN FASHION — Jonna Hansen Prototype -->
+  <div style="padding: 0 30px; width:100%; margin-bottom: 16px; margin-top: 60px;">
+    <h3 style="font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:1px; margin-bottom:2px;">Alien Fashion — Jonna Hansen Prototype</h3>
+    <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#000;">Graphic Design</div>
+  </div>
+
+  <!-- Cover left, three others fitting exactly within cover height -->
+  <div id="alienFashionRow" style="display:flex; gap:6px; padding:0 30px; width:100%; box-sizing:border-box; align-items:flex-start;">
+    <img id="alienCover" src="assetsc/Books/alienfashion1.png" alt="Alien Fashion cover" style="width:calc(65% - 3px); height:auto; display:block;">
+    <div id="alienSmalls" style="width:calc(35% - 3px); display:flex; flex-direction:column; gap:6px;">
+      <img src="assetsc/Books/alienfashion2.png" alt="Alien Fashion 2" style="width:100%; height:auto; display:block; object-fit:contain;">
+      <img src="assetsc/Books/alienfashion3.png" alt="Alien Fashion 3" style="width:100%; height:auto; display:block; object-fit:contain;">
+      <img src="assetsc/Books/alienfashion4.png" alt="Alien Fashion 4" style="width:100%; height:auto; display:block; object-fit:contain;">
     </div>
   </div>
-  <div style="width:100%; position:relative; margin:0; padding:0;">
-    <img src="assetsc/Books/pessima.png" alt="Pessima Magazine" style="width:100%; height:auto; display:block;">
-    <div style="position:absolute; bottom:0; left:0; padding:8px 30px; mix-blend-mode:exclusion; line-height:1.2;">
-      <h3 style="font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:1px; color:#fff; margin-bottom:2px;">Pessima Magazine</h3><div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#fff;">Creative Director & Chief Editor</div>
-    </div>
-  </div>
+  <script>
+  (function() {
+    function matchAlienHeight() {
+      var cover = document.getElementById('alienCover');
+      var smalls = document.getElementById('alienSmalls');
+      if (!cover || !smalls) return;
+      var h = cover.offsetHeight;
+      if (h > 0) {
+        smalls.style.height = h + 'px';
+        var imgs = smalls.querySelectorAll('img');
+        var gap = 6;
+        var each = Math.floor((h - gap * (imgs.length - 1)) / imgs.length);
+        imgs.forEach(function(img) {
+          img.style.height = each + 'px';
+          img.style.width = '100%';
+          img.style.objectFit = 'contain';
+        });
+      }
+    }
+    var cover = document.getElementById('alienCover');
+    if (cover && cover.complete) { matchAlienHeight(); }
+    else if (cover) { cover.addEventListener('load', matchAlienHeight); }
+    window.addEventListener('resize', matchAlienHeight);
+  })();
+  </script>
 
   <!-- LOGOS -->
   <div class="subsection-label">Logos</div>
@@ -685,6 +814,22 @@ section h2 { color: #000; }
     <a href="https://hg-lf.com" target="_blank">HG-LF.com</a>
     <a href="https://simonacoltello.com" target="_blank">Simonacoltello.com</a>
     <a href="https://pessimart.com" target="_blank">Pessimart.com</a>
+  </div>
+
+  <!-- 3D -->
+  <div class="subsection-label" style="letter-spacing:0;">3D</div>
+
+  <div style="width:100%; display:flex; justify-content:space-between; padding:0 30px; box-sizing:border-box; margin-bottom:20px;">
+    <span style="font-size:11px; text-transform:uppercase; letter-spacing:1px;">3D Modeling & Photography — Blender, ZBrush, Unreal Engine, Renpy</span>
+    <span style="font-size:11px; text-transform:uppercase; letter-spacing:1px;">Collab w/ Alfred Francis Pietroni</span>
+  </div>
+
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+
+  <div style="display:flex; gap:0; padding:0 30px; width:100%; box-sizing:border-box; align-items:center;">
+    <img src="assetsc/3D/poster 1.png" alt="Poster 1" style="width:17%; height:auto; display:block; margin-right:-2%; position:relative; z-index:2;">
+    <model-viewer src="assetsc/3D/3dmodel.glb" auto-rotate rotation-per-second="20deg" camera-controls disable-zoom style="width:66%; height:800px; background:transparent; --poster-color:transparent;" shadow-intensity="0" camera-orbit="0deg 80deg 105%" field-of-view="22deg" min-field-of-view="22deg" max-field-of-view="22deg"></model-viewer>
+    <img src="assetsc/3D/poster2.png" alt="Poster 2" style="width:17%; height:auto; display:block; margin-right:-2%; position:relative; z-index:2;">
   </div>
 
 </section>
@@ -792,6 +937,11 @@ section h2 { color: #000; }
   <img id="preview-img" src="" alt="">
 </div>
 
+<!-- POSTER LIGHTBOX -->
+<div id="poster-lightbox">
+  <img id="poster-lightbox-img" src="" alt="">
+</div>
+
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // --- Project overlay ---
 const preview = document.getElementById('project-preview');
@@ -835,7 +985,6 @@ window.addEventListener('scroll', () => {
 
   const items = Array.from(container.querySelectorAll('.poster-item'));
 
-  // End state: posters just barely not overlapping (260px wide + 10px gap = 270px apart)
   const END_OFFSET = 270;
 
   items.forEach((item, i) => { item.style.zIndex = i + 1; });
@@ -856,6 +1005,39 @@ window.addEventListener('scroll', () => {
   }, { passive: true });
 
   render(0);
+})();
+
+// --- Poster lightbox ---
+(function() {
+  const lightbox = document.getElementById('poster-lightbox');
+  const lbImg = document.getElementById('poster-lightbox-img');
+
+  document.querySelectorAll('.poster-item').forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const img = item.querySelector('img');
+      if (!img) return;
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  lightbox.addEventListener('click', function() {
+    lightbox.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  });
+
+  // Also close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      lightbox.classList.remove('open');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+  });
 })();
 
 // --- Photo lightbox ---
