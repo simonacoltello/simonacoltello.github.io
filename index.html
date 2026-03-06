@@ -175,7 +175,12 @@ section h2 {
   font-weight: normal;
 }
 
-/* --- PROJECT (full page) --- */
+.mobile-only { display: none; }
+.desktop-only { display: block; }
+@media (max-width: 768px) {
+  .mobile-only { display: block; }
+  .desktop-only { display: none; }
+}
 .project {
   width: 100%;
   position: relative;
@@ -355,10 +360,11 @@ section h2 { color: #000; }
 #posters {
   position: sticky;
   top: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 30px 0;
+  justify-content: center;
   background: #fff;
   width: 100%;
 }
@@ -624,18 +630,18 @@ section h2 { color: #000; }
 <section id="photography">
   <h2>Photography</h2>
   <div class="photo-grid">
-    <img src="assetsc/Photography/photography01.webp" alt="Photo 01">
-    <img src="assetsc/Photography/photography02.webp" alt="Photo 02">
-    <img src="assetsc/Photography/photography03.webp" alt="Photo 03">
-    <img src="assetsc/Photography/photography04.webp" alt="Photo 04">
-    <img src="assetsc/Photography/photography05.webp" alt="Photo 05">
-    <img src="assetsc/Photography/photography06.webp" alt="Photo 06">
-    <img src="assetsc/Photography/photography07.webp" alt="Photo 07">
-    <img src="assetsc/Photography/photography08.webp" alt="Photo 08">
-    <img src="assetsc/Photography/photography09.webp" alt="Photo 09">
-    <img src="assetsc/Photography/photography10.webp" alt="Photo 10">
-    <img src="assetsc/Photography/photography11.webp" alt="Photo 11">
-    <img src="assetsc/Photography/photography12.webp" alt="Photo 12">
+    <img src="assetsc/Photography/photography01.webp" alt="Photo 01" loading="lazy">
+    <img src="assetsc/Photography/photography02.webp" alt="Photo 02" loading="lazy">
+    <img src="assetsc/Photography/photography03.webp" alt="Photo 03" loading="lazy">
+    <img src="assetsc/Photography/photography04.webp" alt="Photo 04" loading="lazy">
+    <img src="assetsc/Photography/photography05.webp" alt="Photo 05" loading="lazy">
+    <img src="assetsc/Photography/photography06.webp" alt="Photo 06" loading="lazy">
+    <img src="assetsc/Photography/photography07.webp" alt="Photo 07" loading="lazy">
+    <img src="assetsc/Photography/photography08.webp" alt="Photo 08" loading="lazy">
+    <img src="assetsc/Photography/photography09.webp" alt="Photo 09" loading="lazy">
+    <img src="assetsc/Photography/photography10.webp" alt="Photo 10" loading="lazy">
+    <img src="assetsc/Photography/photography11.webp" alt="Photo 11" loading="lazy">
+    <img src="assetsc/Photography/photography12.webp" alt="Photo 12" loading="lazy">
   </div>
 </section>
 
@@ -1009,7 +1015,8 @@ section h2 { color: #000; }
     <div class="project-overlay">
       <h3>No room for effortless conversation</h3>
       <div class="role">Artwork • 2024</div>
-      <p>On the occasion of the end of the Specific Residence at BiM Milano, Simona collaborated with artist Marte Gastaldello on the creation of a collective work of public art, which will be installed on the facade of the construction site of the Pirelli building in front of BiM. It will be a large white flag on which a black text is printed, written in a moment of meeting and discussion between Marte, Simona and other people from the community.<br><br>The intervention starts from a reflection on the concept of the flag as an object capable of conveying an identity, both personal and collective. In dealing with this mechanism, Marte and Simona chose to create their own language starting from the one used in the posters found at the entrance to collective spaces, clubs and all other community centers. This is a well-defined code, which is used to communicate to those crossing that they are entering a safe space, in which their identity will not be questioned or questioned in any way. This language is taken, taken out of its context and abstracted in the form of the flag until it arrives at a graphic form which, in visual contrast with what inspired it, has no personal and emotional sign other than that expressed by the words themselves.<br><br>The intervention is inspired by the importance of language in the construction of an identity. In returning to BiM a trace of their passage, Marte and Simona want to bring a look into their microcosm to the building: the sign of a collective body that feels safe in its existence.<br><br>27 x 7m • 100% poliestere Pongè<br><br>On Display at Manifattura Tabacchi (FI), BASE (MI), BiM (MI)</p>
+      <p class="desktop-only">On the occasion of the end of the Specific Residence at BiM Milano, Simona collaborated with artist Marte Gastaldello on the creation of a collective work of public art, which will be installed on the facade of the construction site of the Pirelli building in front of BiM. It will be a large white flag on which a black text is printed, written in a moment of meeting and discussion between Marte, Simona and other people from the community.<br><br>The intervention starts from a reflection on the concept of the flag as an object capable of conveying an identity, both personal and collective. In dealing with this mechanism, Marte and Simona chose to create their own language starting from the one used in the posters found at the entrance to collective spaces, clubs and all other community centers. This is a well-defined code, which is used to communicate to those crossing that they are entering a safe space, in which their identity will not be questioned or questioned in any way. This language is taken, taken out of its context and abstracted in the form of the flag until it arrives at a graphic form which, in visual contrast with what inspired it, has no personal and emotional sign other than that expressed by the words themselves.<br><br>The intervention is inspired by the importance of language in the construction of an identity. In returning to BiM a trace of their passage, Marte and Simona want to bring a look into their microcosm to the building: the sign of a collective body that feels safe in its existence.<br><br>27 x 7m • 100% poliestere Pongè<br><br>On Display at Manifattura Tabacchi (FI), BASE (MI), BiM (MI)</p>
+      <p class="mobile-only">The intervention starts from a reflection on the concept of the flag as an object capable of conveying an identity, both personal and collective. In dealing with this mechanism, Marte and Simona chose to create their own language starting from the one used in the posters found at the entrance to collective spaces, clubs and all other community centers. This is a well-defined code, which is used to communicate to those crossing that they are entering a safe space, in which their identity will not be questioned or questioned in any way. This language is taken, taken out of its context and abstracted in the form of the flag until it arrives at a graphic form which, in visual contrast with what inspired it, has no personal and emotional sign other than that expressed by the words themselves.<br><br>27 x 7m • 100% poliestere Pongè</p>
     </div>
   </div>
 
@@ -1020,7 +1027,8 @@ section h2 { color: #000; }
     <div class="project-overlay">
       <h3>Touching Grass/Sand in Ultra HD</h3>
       <div class="role">Artwork • 2025</div>
-      <p>"4K: Touching Grass in Ultra HD is a collective exhibit, curated by Simona Coltello, that reflects on artificial means of utopian life. Post Internet research, Early AI and 3D sculpture will be the main focuses to explore dystopian imaginaries, (chronically) online aesthetic influences, final-stage consumerism and promethean corruption of the artists' depiction of beauty."<br><br>Simona's work is the starting point from which the whole collective exhibition has came to life. The two natural rooms reflect the dystopian human instict to recreate nature with artificial means. Ambient Soundscapes, Fireplace Videos, Fake Plants, Indoor Climbing and Stars' Projections are all daily instruments from which the artist took inspiration in the creation of these natural environments. Humans have reached a point in which they would rather recreate nature than preserve it.<br><br>Collective Exhibition with: Alfred Francis Pietroni, Anais Bianca Beltrame, Bautista Botto Barili, Covid Room, Dorsa Rafiee, Eyeguys, Eva & Franco Mattes, Francesco Saverio Tani, Jenia Filatova, Lars Larkin, Nelson Gutjahr, Simona Coltello, Simone Restifo Pilato, x.luna<br><br>29th March – 05 April • 19.00–21.00<br>1000kg of Soil • 25x25m</p>
+      <p class="desktop-only">"4K: Touching Grass in Ultra HD is a collective exhibit, curated by Simona Coltello, that reflects on artificial means of utopian life. Post Internet research, Early AI and 3D sculpture will be the main focuses to explore dystopian imaginaries, (chronically) online aesthetic influences, final-stage consumerism and promethean corruption of the artists' depiction of beauty."<br><br>Simona's work is the starting point from which the whole collective exhibition has came to life. The two natural rooms reflect the dystopian human instict to recreate nature with artificial means. Ambient Soundscapes, Fireplace Videos, Fake Plants, Indoor Climbing and Stars' Projections are all daily instruments from which the artist took inspiration in the creation of these natural environments. Humans have reached a point in which they would rather recreate nature than preserve it.<br><br>Collective Exhibition with: Alfred Francis Pietroni, Anais Bianca Beltrame, Bautista Botto Barili, Covid Room, Dorsa Rafiee, Eyeguys, Eva & Franco Mattes, Francesco Saverio Tani, Jenia Filatova, Lars Larkin, Nelson Gutjahr, Simona Coltello, Simone Restifo Pilato, x.luna<br><br>29th March – 05 April • 19.00–21.00<br>1000kg of Soil • 25x25m</p>
+      <p class="mobile-only">"4K: Touching Grass in Ultra HD is a collective exhibit, curated by Simona Coltello, that reflects on artificial means of utopian life. Post Internet research, Early AI and 3D sculpture will be the main focuses to explore dystopian imaginaries, (chronically) online aesthetic influences, final-stage consumerism and promethean corruption of the artists' depiction of beauty."<br><br>Simona's work is the starting point from which the whole collective exhibition has came to life. The two natural rooms reflect the dystopian human instict to recreate nature with artificial means. Ambient Soundscapes, Fireplace Videos, Fake Plants, Indoor Climbing and Stars' Projections are all daily instruments from which the artist took inspiration in the creation of these natural environments. Humans have reached a point in which they would rather recreate nature than preserve it.</p>
     </div>
   </div>
 
@@ -1031,7 +1039,8 @@ section h2 { color: #000; }
     <div class="project-overlay">
       <h3>In Desperate Need of a Job</h3>
       <div class="role">Artwork • 2024</div>
-      <p>On Display at BiM (MI) for Bim Bum Bam by Kenny Alexander Laurence<br><br>"Il discorso si centra su un'Italia in divenire, meticcia, sessualmente libera e digitalizzata che, seppur minoritaria, si articola nel rapido e costante rimescolamento di una grande città europea attraversata da flutti planetari. Bim Bum Bam è un'onomatopea, la sonorità di una sequenza di azioni. Suoni che, rappresentati graficamente sulla pagina di un fumetto, veicolano sia una simultaneità che una consequenzialità di istanze. Un fermento scritto che scandisce il ritmo di una coreografia, o meglio, di una lotta generazionale combattuta per le sorti del mondo."<br><br>Con Opere di Ludovica Anversa, Nicola Bianco, Mara Callegaro, Federico Carena, Simona Coltello, Nicole Colombo, Riccardo De Biasi, Camilla De Siati, Valentina De Zanche, Alice Fiorelli, Martina Ferrari, Marte Livio, Lorenzo Schetter Li Greci, Alessandro Macciardi, Marcello Maranzan, Rebecca Momoli, Marvin Gabriele Nwachukwu, Marco Resta, Fabiola Skraqi, Mario Uliassi, Alejandra Varela Perera, Pietro Vedovato e Federico Zeltman.<br><br>Blueback Print</p>
+      <p class="desktop-only">On Display at BiM (MI) for Bim Bum Bam by Kenny Alexander Laurence<br><br>"Il discorso si centra su un'Italia in divenire, meticcia, sessualmente libera e digitalizzata che, seppur minoritaria, si articola nel rapido e costante rimescolamento di una grande città europea attraversata da flutti planetari. Bim Bum Bam è un'onomatopea, la sonorità di una sequenza di azioni. Suoni che, rappresentati graficamente sulla pagina di un fumetto, veicolano sia una simultaneità che una consequenzialità di istanze. Un fermento scritto che scandisce il ritmo di una coreografia, o meglio, di una lotta generazionale combattuta per le sorti del mondo."<br><br>Con Opere di Ludovica Anversa, Nicola Bianco, Mara Callegaro, Federico Carena, Simona Coltello, Nicole Colombo, Riccardo De Biasi, Camilla De Siati, Valentina De Zanche, Alice Fiorelli, Martina Ferrari, Marte Livio, Lorenzo Schetter Li Greci, Alessandro Macciardi, Marcello Maranzan, Rebecca Momoli, Marvin Gabriele Nwachukwu, Marco Resta, Fabiola Skraqi, Mario Uliassi, Alejandra Varela Perera, Pietro Vedovato e Federico Zeltman.<br><br>Blueback Print</p>
+      <p class="mobile-only">On Display at BiM (MI) for Bim Bum Bam by Kenny Alexander Laurence<br><br>"Il discorso si centra su un'Italia in divenire, meticcia, sessualmente libera e digitalizzata che, seppur minoritaria, si articola nel rapido e costante rimescolamento di una grande città europea attraversata da flutti planetari. Bim Bum Bam è un'onomatopea, la sonorità di una sequenza di azioni. Suoni che, rappresentati graficamente sulla pagina di un fumetto, veicolano sia una simultaneità che una consequenzialità di istanze. Un fermento scritto che scandisce il ritmo di una coreografia, o meglio, di una lotta generazionale combattuta per le sorti del mondo."</p>
     </div>
   </div>
 
@@ -1105,7 +1114,7 @@ window.addEventListener('scroll', () => {
     item.style.willChange = 'transform';
   });
 
-  const ZONE = window.innerHeight * 0.8;
+  const ZONE = window.innerHeight * 0.4;
   wrapper.style.height = (ZONE + window.innerHeight) + 'px';
 
   let target = 0;
