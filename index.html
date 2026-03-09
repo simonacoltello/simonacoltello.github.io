@@ -5,561 +5,179 @@
 <title>Simona Coltello</title>
 <link rel="icon" type="image/png" href="assetsc/Favicon-Logo/me.png">
 <style>
-/* --- RESET & BASICS --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-  background: #fff;
-  color: #000;
-  font-family: 'founders-grotesk', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 39px;
-  overflow-x: clip;
+  background:#fff; color:#000;
+  font-family:'founders-grotesk',"Helvetica Neue",HelveticaNeue,Helvetica,Arial,sans-serif;
+  font-weight:400; font-size:32px; line-height:39px; overflow-x:clip;
 }
 
-/* --- FIXED LOGO --- */
 #fixed-logo {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  pointer-events: none;
-  mix-blend-mode: exclusion;
-  background: transparent;
-  transition: opacity 0.3s ease;
+  position:fixed; top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  z-index:9999; pointer-events:none;
+  mix-blend-mode:exclusion; background:transparent;
+  transition:opacity 0.3s ease;
+  will-change:opacity;
 }
-
 #fixed-logo img {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  filter: invert(1) brightness(2);
-  display: block;
+  max-width:300px; width:100%; height:auto;
+  filter:invert(1) brightness(2); display:block;
 }
 
-/* --- SECTIONS --- */
-section {
-  padding: 30px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#pessima {
-  flex-direction: column;
-  padding: 30px 0;
-  background: #fff;
-  align-items: flex-start;
-  overflow: visible;
-}
-
-#photography {
-  flex-direction: column;
-  padding: 30px 0;
-  background: #fff;
-  align-items: flex-start;
-}
-
-#graphic-design {
-  flex-direction: column;
-  padding: 30px 0;
-  background: #fff;
-  align-items: flex-start;
-}
-
-#curation {
-  flex-direction: column;
-  padding: 30px 0;
-  background: #fff;
-}
-
-#artworks {
-  flex-direction: column;
-  padding: 30px 0;
-  background: #fff;
-}
+section { padding:30px; display:flex; align-items:center; justify-content:center; }
+#pessima,#photography,#graphic-design { flex-direction:column; padding:30px 0; background:#fff; align-items:flex-start; overflow:visible; }
+#curation,#artworks { flex-direction:column; padding:30px 0; background:#fff; }
 
 section h2 {
-  font-size: 32px;
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  align-self: flex-start;
-  padding: 0 30px;
-  width: 100%;
+  font-size:32px; font-weight:400; color:#000;
+  margin-bottom:20px; text-transform:uppercase; letter-spacing:2px;
+  align-self:flex-start; padding:0 30px; width:100%;
 }
 
-/* subsection label */
 .subsection-label {
-  font-size: 11px;
-  font-weight: 400;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  padding: 0 30px;
-  width: 100%;
-  margin-bottom: 8px;
-  margin-top: 8px;
+  font-size:11px; font-weight:400; color:#000;
+  text-transform:uppercase; letter-spacing:3px;
+  padding:0 30px; width:100%; margin-bottom:8px; margin-top:8px;
 }
 
-/* --- HERO SECTION --- */
 #hero {
-  flex-direction: column;
-  text-align: center;
-  padding-top: 0;
-  padding-bottom: 0;
-  background: #fff;
-  min-height: 100vh;
-  justify-content: center;
+  flex-direction:column; text-align:center;
+  padding-top:0; padding-bottom:0; background:#fff;
+  min-height:100vh; justify-content:center;
 }
-
-#hero h1 {
-  font-size: 32px;
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-}
-
+#hero h1 { font-size:32px; font-weight:400; color:#000; margin-bottom:20px; letter-spacing:2px; }
 #hero .subtitle {
-  font-size: 10px;
-  color: #555;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 40px;
-  margin-top: 180px;
-  font-weight: 400;
+  font-size:10px; color:#000; text-transform:uppercase;
+  letter-spacing:3px; margin-bottom:40px; margin-top:180px; font-weight:400;
 }
 
-/* --- ABOUT SECTION --- */
-#about {
-  flex-direction: column;
-  align-items: flex-start;
-  background: #fff;
-  padding-left: 30px;
-  padding-right: 30px;
-}
+#about { flex-direction:column; align-items:flex-start; background:#fff; padding-left:30px; padding-right:30px; }
+#about h2 { font-size:32px; font-weight:400; color:#000; margin-bottom:40px; text-transform:uppercase; letter-spacing:2px; padding:0; }
+#about .content { max-width:1000px; width:100%; }
+#about .bio-text { font-size:32px; line-height:39px; color:#000; margin-bottom:40px; font-weight:normal; }
 
-#about h2 {
-  font-size: 32px;
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 0;
-}
+.mobile-only { display:none; }
+.desktop-only { display:block; }
+@media (max-width:768px) { .mobile-only { display:block; } .desktop-only { display:none; } }
 
-#about .content {
-  max-width: 1000px;
-  width: 100%;
-}
-
-#about .bio-text {
-  font-size: 32px;
-  line-height: 39px;
-  color: #333;
-  margin-bottom: 40px;
-  font-weight: normal;
-}
-
-.mobile-only { display: none; }
-.desktop-only { display: block; }
-@media (max-width: 768px) {
-  .mobile-only { display: block; }
-  .desktop-only { display: none; }
-}
-.project {
-  width: 100%;
-  position: relative;
-  margin-bottom: 0;
-  overflow: visible;
-}
-
-.project-image {
-  width: 100%;
-  aspect-ratio: 4/3;
-  background: #e8e8e8;
-  overflow: visible;
-  display: block;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: opacity 0.4s ease;
-}
-
-
+.project { width:100%; position:relative; margin-bottom:0; overflow:visible; }
+.project-image { width:100%; aspect-ratio:4/3; background:#e8e8e8; overflow:visible; display:block; }
+.project-image img { width:100%; height:100%; object-fit:cover; display:block; transition:opacity 0.4s ease; }
 .project-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px 60px;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-  overflow: visible;
+  position:absolute; top:0; left:0; right:0; bottom:0;
+  background:#fff; display:flex; flex-direction:column;
+  justify-content:center; align-items:flex-start;
+  padding:40px 60px; opacity:0; transition:opacity 0.4s ease;
+  pointer-events:none; overflow:visible;
 }
+.project.active .project-overlay { opacity:1; pointer-events:auto; }
+.project.active .project-image img { opacity:0; }
+.project-overlay h3 { font-size:32px; font-weight:400; color:#000; margin-bottom:4px; text-transform:uppercase; letter-spacing:1px; line-height:1.1; }
+.project-overlay .role { font-size:32px; color:#000; text-transform:uppercase; letter-spacing:2px; margin-bottom:10px; font-weight:400; line-height:1.1; }
+.project-overlay p { font-size:22px; line-height:1.2; color:#000; font-weight:normal; width:100%; }
 
-.project.active .project-overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.project.active .project-image img {
-  opacity: 0;
-}
-.project-overlay h3 {
-  font-size: 32px;
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 4px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.1;
-}
-
-.project-overlay .role {
-  font-size: 32px;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  font-weight: 400;
-  line-height: 1.1;
-}
-
-.project-overlay p {
-  font-size: 22px;
-  line-height: 1.2;
-  color: #000;
-  font-weight: normal;
-  width: 100%;
-}
-
-/* --- CENTERED PREVIEW IMAGE --- */
 #project-preview {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.95);
-  z-index: 9999;
-  width: 300px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  position:fixed; top:50%; left:50%;
+  transform:translate(-50%,-50%) scale(0.95);
+  z-index:9999; width:300px; opacity:0; pointer-events:none;
+  transition:opacity 0.3s ease, transform 0.3s ease;
+  will-change:opacity,transform;
 }
+#project-preview.visible { opacity:1; transform:translate(-50%,-50%) scale(1); pointer-events:auto; cursor:pointer; }
+#project-preview img { width:100%; height:200px; object-fit:cover; display:block; }
 
-#project-preview.visible {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-#project-preview img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
-
-/* --- ALL TEXT BLACK --- */
-* { color: #000; }
-a { color: #000; }
-#hero .subtitle { color: #000; }
-#about .bio-text { color: #000; }
-section h2 { color: #000; }
-#contact a { color: #000; }
-#contact a:hover { color: #555; }
-
-/* --- GALLERY SCROLL (Pessima + Logos) --- */
-#pessima h2 {
-  padding: 0 30px;
-  width: 100%;
-}
+* { color:#000; }
+a { color:#000; }
+#contact a { color:#000; text-decoration:none; }
+#contact a:hover { color:#555; }
 
 .gallery-scroll {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  width: 100%;
-  padding: 0 30px;
-  gap: 20px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  box-sizing: border-box;
+  display:flex; flex-direction:row; overflow-x:auto;
+  width:100%; padding:0 30px; gap:20px;
+  scrollbar-width:none; -ms-overflow-style:none; box-sizing:border-box;
 }
+.gallery-scroll::-webkit-scrollbar { display:none; }
+.gallery-item { flex:0 0 340px; display:flex; flex-direction:column; }
+.gallery-item img { width:100%; height:auto; display:block; object-fit:contain; }
+.gallery-item-info { padding:12px 0 0 0; }
+.gallery-item-info h3 { font-size:14px; font-weight:400; color:#000; text-transform:uppercase; letter-spacing:1px; line-height:1.2; margin-bottom:4px; }
+.gallery-item-info .role { font-size:11px; color:#000; text-transform:uppercase; letter-spacing:1px; line-height:1.4; }
 
-.gallery-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-.gallery-item {
-  flex: 0 0 340px;
-  display: flex;
-  flex-direction: column;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-.gallery-item-info {
-  padding: 12px 0 0 0;
-}
-
-.gallery-item-info h3 {
-  font-size: 14px;
-  font-weight: 400;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.2;
-  margin-bottom: 4px;
-}
-
-.gallery-item-info .role {
-  font-size: 11px;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.4;
-}
-
-/* --- POSTER WRAPPER --- */
-#posterWrapper {
-  position: relative;
-  width: 100%;
-  overflow-x: clip;
-}
-
-/* --- POSTERS (sticky inside wrapper) --- */
+#posterWrapper { position:relative; width:100%; overflow-x:clip; }
 #posters {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  background: #fff;
-  width: 100%;
+  position:sticky; top:0; height:100vh;
+  display:flex; flex-direction:column;
+  align-items:flex-start; justify-content:center;
+  background:#fff; width:100%;
 }
+.poster-scroll { position:relative; width:100%; padding:0 30px; box-sizing:border-box; height:380px; overflow:visible; }
+.poster-item { position:absolute; top:0; will-change:transform; cursor:pointer; }
+.poster-item img { width:260px; height:325px; object-fit:fill; display:block; transition:opacity 0.2s ease; }
+.poster-item:hover img { opacity:0.85; }
 
-.poster-scroll {
-  position: relative;
-  width: 100%;
-  padding: 0 30px;
-  box-sizing: border-box;
-  height: 380px;
-  overflow: visible;
-}
-
-.poster-item {
-  position: absolute;
-  top: 0;
-  will-change: transform;
-  cursor: pointer;
-}
-
-.poster-item img {
-  width: 260px;
-  height: 325px;
-  object-fit: fill;
-  display: block;
-  transition: opacity 0.2s ease;
-}
-
-.poster-item:hover img {
-  opacity: 0.85;
-}
-
-/* --- POSTER LIGHTBOX --- */
 #poster-lightbox {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255, 255, 255, 0.97);
-  z-index: 999999;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  position:fixed; top:0; left:0; right:0; bottom:0;
+  background:rgba(255,255,255,0.97); z-index:999999;
+  display:none; align-items:center; justify-content:center; cursor:pointer;
 }
-
-#poster-lightbox.open {
-  display: flex;
-}
-
-#poster-lightbox-img {
-  max-width: 90vw;
-  max-height: 90vh;
-  object-fit: contain;
-  display: block;
-  /* subtle fade-in */
-  animation: posterFadeIn 0.25s ease forwards;
-}
-
-@keyframes posterFadeIn {
-  from { opacity: 0; transform: scale(0.97); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-/* close hint */
+#poster-lightbox.open { display:flex; }
+#poster-lightbox-img { max-width:90vw; max-height:90vh; object-fit:contain; display:block; animation:posterFadeIn 0.25s ease forwards; }
+@keyframes posterFadeIn { from { opacity:0; transform:scale(0.97); } to { opacity:1; transform:scale(1); } }
 #poster-lightbox::after {
-  content: 'Click to close';
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #000;
-  opacity: 0.4;
-  font-family: 'founders-grotesk', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  content:'Click to close'; position:absolute; bottom:30px; left:50%;
+  transform:translateX(-50%); font-size:10px; text-transform:uppercase;
+  letter-spacing:3px; color:#000; opacity:0.4;
+  font-family:'founders-grotesk',Helvetica,sans-serif;
 }
 
-/* --- WEBSITES --- */
-.websites-list {
-  padding: 0 30px;
-  width: 100%;
+.websites-list { padding:0 30px; width:100%; }
+.websites-list a { display:block; font-size:20px; font-weight:400; text-decoration:none; color:#000; text-transform:uppercase; letter-spacing:1px; line-height:1.4; margin-bottom:10px; transition:color 0.2s ease; }
+.websites-list a:hover { color:#555; }
+
+#contact { flex-direction:column; background:#fff; text-align:center; }
+#contact h2 { font-size:32px; font-weight:400; color:#000; margin-bottom:40px; text-transform:uppercase; letter-spacing:2px; }
+#contact a { color:#000; text-decoration:none; font-size:32px; transition:color 0.2s ease; display:block; margin-bottom:10px; font-weight:normal; }
+#contact a:hover { color:#555; }
+
+@media (max-width:768px) { #hero h1 { font-size:32px; } }
+
+.photo-grid { display:flex; flex-wrap:wrap; gap:6px; padding:0 30px; width:100%; box-sizing:border-box; }
+.photo-grid img { width:calc(25% - 5px); height:160px; object-fit:cover; display:block; cursor:pointer; transition:opacity 0.2s ease; }
+.photo-grid img:hover { opacity:0.85; }
+
+#photo-lightbox { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.97); z-index:99999; display:none; align-items:center; justify-content:center; cursor:pointer; }
+#photo-lightbox.open { display:flex; }
+#lightbox-img { max-width:90vw; max-height:90vh; object-fit:contain; display:block; }
+
+/* Orbit containers */
+.orbit-img, .orbit-img-af, .orbit-img-as {
+  position:absolute; pointer-events:none; will-change:transform;
+}
+.orbit-img img, .orbit-img-af img, .orbit-img-as img {
+  display:block; box-shadow:0 4px 20px rgba(0,0,0,0.15); pointer-events:auto; cursor:pointer;
 }
 
-.websites-list a {
-  display: block;
-  font-size: 20px;
-  font-weight: 400;
-  text-decoration: none;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.4;
-  margin-bottom: 10px;
-  transition: color 0.2s ease;
+#orbit-lightbox {
+  position:fixed; top:0; left:0; right:0; bottom:0;
+  background:rgba(255,255,255,0.97); z-index:999999;
+  display:none; align-items:center; justify-content:center; cursor:pointer;
 }
-
-.websites-list a:hover {
-  color: #555;
-}
-
-/* --- CONTACT SECTION --- */
-#contact {
-  flex-direction: column;
-  background: #fff;
-  text-align: center;
-}
-
-#contact h2 {
-  font-size: 32px;
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-#contact a {
-  color: #000;
-  text-decoration: none;
-  font-size: 32px;
-  transition: color 0.2s ease;
-  display: block;
-  margin-bottom: 10px;
-  font-weight: normal;
-}
-
-#contact a:hover {
-  color: #555;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-  #hero h1 { font-size: 32px; }
-  .project { grid-template-columns: 1fr; }
-  .project:nth-child(even) .project-info { order: 0; }
-  #about .collaborations { grid-template-columns: 1fr; }
-  #top { width: calc(100% - 20px); }
-}
-
-/* --- PHOTO GRID --- */
-.photo-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 0 30px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.photo-grid img {
-  width: calc(25% - 5px);
-  height: 160px;
-  object-fit: cover;
-  display: block;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.photo-grid img:hover { opacity: 0.85; }
-
-/* --- LIGHTBOX --- */
-#photo-lightbox {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.97);
-  z-index: 99999;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-#photo-lightbox.open { display: flex; }
-
-#lightbox-img {
-  max-width: 90vw;
-  max-height: 90vh;
-  object-fit: contain;
-  display: block;
-}
+#orbit-lightbox-img { max-width:90vw; max-height:90vh; object-fit:contain; display:block; animation:posterFadeIn 0.25s ease forwards; }
 </style>
 </head>
-
 <body>
+
 <div id="fixed-logo">
   <img src="assetsc/Favicon-Logo/logosc.png" alt="Simona Coltello">
 </div>
 <div id="page-wrapper">
 
-<!-- HERO -->
 <section id="hero">
   <div class="subtitle">Curator • Graphic Designer • Web Developer • Photographer</div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <h2>About</h2>
   <div class="content">
@@ -570,63 +188,19 @@ section h2 { color: #000; }
   </div>
 </section>
 
-<!-- 1. PESSIMA -->
 <section id="pessima">
   <h2>Pessima</h2>
   <div class="gallery-scroll">
-    <div class="gallery-item">
-      <img src="assetsc/Images/DSC01081 1.webp" alt="Jenna Marvin">
-      <div class="gallery-item-info">
-        <h3>Jenna Marvin</h3>
-        <div class="role">Vol. 2 • 2024 • Paris, France</div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="assetsc/Images/Image 7-16-24 at 6.55 PM (2) 1.webp" alt="Vampy">
-      <div class="gallery-item-info">
-        <h3>Vampy</h3>
-        <div class="role">Vol. 2 • 2024 • Los Angeles</div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="assetsc/Images/PESSIMA 32f 1.webp" alt="2dual">
-      <div class="gallery-item-info">
-        <h3>2dual</h3>
-        <div class="role">Vol. 2 • 2024 • Melbourne, Australia</div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="assetsc/Images/DSC04012 1.webp" alt="Opia">
-      <div class="gallery-item-info">
-        <h3>Opia</h3>
-        <div class="role">Vol. 2 • 2024 • Milan, Italy</div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="assetsc/Images/WhatsApp Image 2025-01-30 at 16.49.06 1.webp" alt="Aun Helden">
-      <div class="gallery-item-info">
-        <h3>Aun Helden</h3>
-        <div class="role">Vol. 1 • 2023 • Brazil</div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="assetsc/Images/phil00301 copia 1.webp" alt="Ivy Chilelli">
-      <div class="gallery-item-info">
-        <h3>Ivy Chilelli</h3>
-        <div class="role">Vol. 1 • 2023 • Milan, Italy</div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="assetsc/Images/DSC01637 1.webp" alt="Enya">
-      <div class="gallery-item-info">
-        <h3>Enya</h3>
-        <div class="role">Vol. 0 • 2021 • Milan, Italy</div>
-      </div>
-    </div>
+    <div class="gallery-item"><img src="assetsc/Images/DSC01081 1.webp" alt="Jenna Marvin"><div class="gallery-item-info"><h3>Jenna Marvin</h3><div class="role">Vol. 2 • 2024 • Paris, France</div></div></div>
+    <div class="gallery-item"><img src="assetsc/Images/Image 7-16-24 at 6.55 PM (2) 1.webp" alt="Vampy"><div class="gallery-item-info"><h3>Vampy</h3><div class="role">Vol. 2 • 2024 • Los Angeles</div></div></div>
+    <div class="gallery-item"><img src="assetsc/Images/PESSIMA 32f 1.webp" alt="2dual"><div class="gallery-item-info"><h3>2dual</h3><div class="role">Vol. 2 • 2024 • Melbourne, Australia</div></div></div>
+    <div class="gallery-item"><img src="assetsc/Images/DSC04012 1.webp" alt="Opia"><div class="gallery-item-info"><h3>Opia</h3><div class="role">Vol. 2 • 2024 • Milan, Italy</div></div></div>
+    <div class="gallery-item"><img src="assetsc/Images/WhatsApp Image 2025-01-30 at 16.49.06 1.webp" alt="Aun Helden"><div class="gallery-item-info"><h3>Aun Helden</h3><div class="role">Vol. 1 • 2023 • Brazil</div></div></div>
+    <div class="gallery-item"><img src="assetsc/Images/phil00301 copia 1.webp" alt="Ivy Chilelli"><div class="gallery-item-info"><h3>Ivy Chilelli</h3><div class="role">Vol. 1 • 2023 • Milan, Italy</div></div></div>
+    <div class="gallery-item"><img src="assetsc/Images/DSC01637 1.webp" alt="Enya"><div class="gallery-item-info"><h3>Enya</h3><div class="role">Vol. 0 • 2021 • Milan, Italy</div></div></div>
   </div>
 </section>
 
-<!-- 2. PHOTOGRAPHY -->
 <section id="photography">
   <h2>Photography</h2>
   <div class="photo-grid">
@@ -645,37 +219,23 @@ section h2 { color: #000; }
   </div>
 </section>
 
-<!-- PHOTO LIGHTBOX -->
-<div id="photo-lightbox">
-  <img id="lightbox-img" src="" alt="">
-</div>
+<div id="photo-lightbox"><img id="lightbox-img" src="" alt=""></div>
 
-<!-- 3. GRAPHIC DESIGN -->
 <section id="graphic-design">
   <h2>Graphic Design</h2>
 
-  <!-- BOOKS -->
   <div class="subsection-label" style="margin-top:0;">Books</div>
 
-  <!-- PESSIMA MAGAZINE — Orbital layout -->
-  <div style="padding: 0 30px; width:100%; margin-bottom: 8px;">
+  <div style="padding:0 30px; width:100%; margin-bottom:8px;">
     <h3 style="font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:1px; margin-bottom:2px; line-height:1.2;">Pessima Magazine</h3>
     <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#000; line-height:1.4;">Creative Director & Chief Editor</div>
   </div>
-
   <div id="pessima-orbit" style="position:relative; width:100%; height:700px; overflow:hidden;">
-    <!-- Central image -->
-    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); height:400px; z-index:2; box-shadow:0 8px 30px rgba(0,0,0,0.15);">
-      <img src="assetsc/Books/pessima big 1 1.webp" alt="Pessima" style="height:400px; width:auto; display:block;">
-    </div>
-
-    <!-- Orbiting images — inner ring (4 images) -->
+    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); height:400px; z-index:2; box-shadow:0 8px 30px rgba(0,0,0,0.15);"><img src="assetsc/Books/pessima big 1 1.webp" alt="Pessima" style="height:400px; width:auto; display:block;"></div>
     <div class="orbit-img" data-ring="inner" data-index="0"><img src="assetsc/Books/pessimasmall01.webp" alt=""></div>
     <div class="orbit-img" data-ring="inner" data-index="1"><img src="assetsc/Books/pessimasmall02.webp" alt=""></div>
     <div class="orbit-img" data-ring="inner" data-index="2"><img src="assetsc/Books/pessimasmall03.webp" alt=""></div>
     <div class="orbit-img" data-ring="inner" data-index="3"><img src="assetsc/Books/pessimasmall04.webp" alt=""></div>
-
-    <!-- Orbiting images — outer ring (8 more images) -->
     <div class="orbit-img" data-ring="outer" data-index="0"><img src="assetsc/Books/pessimasmall05.webp" alt=""></div>
     <div class="orbit-img" data-ring="outer" data-index="1"><img src="assetsc/Books/pessimasmall06.webp" alt=""></div>
     <div class="orbit-img" data-ring="outer" data-index="2"><img src="assetsc/Books/pessimasmall07.webp" alt=""></div>
@@ -686,132 +246,27 @@ section h2 { color: #000; }
     <div class="orbit-img" data-ring="outer" data-index="7"><img src="assetsc/Books/pessimasmall12.webp" alt=""></div>
   </div>
 
-  <style>
-    .orbit-img {
-      position: absolute;
-      pointer-events: none;
-    }
-    .orbit-img img {
-      display: block;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      pointer-events: auto;
-    }
-  </style>
-
-  <script>
-  (function() {
-    var container = document.getElementById('pessima-orbit');
-    var inner = container.querySelectorAll('.orbit-img[data-ring="inner"]');
-    var outer = container.querySelectorAll('.orbit-img[data-ring="outer"]');
-
-    var innerCount = inner.length;
-    var outerCount = outer.length;
-
-    // inner ring settings
-    var innerRX = 300, innerRY = 100, innerSpeed = 0.00025, innerSize = 130;
-    // outer ring settings
-    var outerRX = 500, outerRY = 160, outerSpeed = 0.00015, outerSize = 100;
-
-    var tilt = [6, -8, 10, -5, 7, -9, 4, -6, 8, -7, 5, -4];
-
-    function animateRing(items, count, rx, ry, speed, size, ts, direction) {
-      var cx = container.offsetWidth / 2;
-      var cy = container.offsetHeight / 2;
-      items.forEach(function(el, i) {
-        var angle = (i / count) * Math.PI * 2 + ts * speed * direction;
-        var x = cx + Math.cos(angle) * rx;
-        var y = cy + Math.sin(angle) * ry;
-        var z = Math.sin(angle);
-        el.style.transform = 'translate(' + (x - size/2) + 'px, ' + (y - size/2) + 'px) rotate(' + tilt[i] + 'deg)';
-        el.style.zIndex = z > 0 ? 3 : 1;
-        el.querySelector('img').style.width = size + 'px';
-      });
-    }
-
-    function animate(ts) {
-      animateRing(inner, innerCount, innerRX, innerRY, innerSpeed, innerSize, ts, 1);
-      animateRing(outer, outerCount, outerRX, outerRY, outerSpeed, outerSize, ts, -1);
-      requestAnimationFrame(animate);
-    }
-    requestAnimationFrame(animate);
-  })();
-  </script>
-
-  <!-- ALIEN FASHION — Jonna Hansen Prototype -->
-  <div style="padding: 0 30px; width:100%; margin-bottom: 8px; margin-top: 8px;">
+  <div style="padding:0 30px; width:100%; margin-bottom:8px; margin-top:8px;">
     <h3 style="font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:1px; margin-bottom:2px; line-height:1.2;">Alien Fashion — Jonna Hansen Prototype</h3>
     <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#000; line-height:1.4;">Graphic Design</div>
   </div>
-
   <div id="alien-orbit" style="position:relative; width:100%; height:700px; overflow:hidden;">
-    <!-- Central image -->
-    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); height:400px; z-index:2; box-shadow:0 8px 30px rgba(0,0,0,0.15);">
-      <img src="assetsc/Books/alienfashion1 1.webp" alt="Alien Fashion" style="height:400px; width:auto; display:block;">
-    </div>
-
-    <!-- 3 orbiting images -->
+    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); height:400px; z-index:2; box-shadow:0 8px 30px rgba(0,0,0,0.15);"><img src="assetsc/Books/alienfashion1 1.webp" alt="Alien Fashion" style="height:400px; width:auto; display:block;"></div>
     <div class="orbit-img-af" data-index="0"><img src="assetsc/Books/alienfashion2 1.webp" alt=""></div>
     <div class="orbit-img-af" data-index="1"><img src="assetsc/Books/alienfashion3 1.webp" alt=""></div>
     <div class="orbit-img-af" data-index="2"><img src="assetsc/Books/alienfashion4 1.webp" alt=""></div>
   </div>
 
-  <style>
-    .orbit-img-af {
-      position: absolute;
-      pointer-events: none;
-    }
-    .orbit-img-af img {
-      display: block;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      pointer-events: auto;
-    }
-  </style>
-
-  <script>
-  (function() {
-    var container = document.getElementById('alien-orbit');
-    var items = container.querySelectorAll('.orbit-img-af');
-    var count = items.length;
-    var tilt = [6, -8, 10];
-    var rx = 340, ry = 120, speed = 0.00022, size = 150;
-
-    function animate(ts) {
-      var cx = container.offsetWidth / 2;
-      var cy = container.offsetHeight / 2;
-      items.forEach(function(el, i) {
-        var angle = (i / count) * Math.PI * 2 + ts * speed;
-        var x = cx + Math.cos(angle) * rx;
-        var y = cy + Math.sin(angle) * ry;
-        var z = Math.sin(angle);
-        el.style.transform = 'translate(' + (x - size/2) + 'px, ' + (y - size/2) + 'px) rotate(' + tilt[i] + 'deg)';
-        el.style.zIndex = z > 0 ? 3 : 1;
-        el.querySelector('img').style.width = size + 'px';
-      });
-      requestAnimationFrame(animate);
-    }
-    requestAnimationFrame(animate);
-  })();
-  </script>
-
-  <!-- AUTOSTRADDLE MAGAZINE -->
-  <div style="padding: 0 30px; width:100%; margin-bottom: 8px; margin-top: 8px;">
+  <div style="padding:0 30px; width:100%; margin-bottom:8px; margin-top:8px;">
     <h3 style="font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:1px; margin-bottom:2px; line-height:1.2;">Autostraddle Magazine</h3>
     <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#000; line-height:1.4;">Art Direction & Graphic Design</div>
   </div>
-
   <div id="autostraddle-orbit" style="position:relative; width:100%; height:700px; overflow:hidden;">
-    <!-- Central image -->
-    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); height:400px; z-index:2; box-shadow:0 8px 30px rgba(0,0,0,0.15);">
-      <img src="assetsc/Books/autostraddle big 1 1.webp" alt="Autostraddle" style="height:400px; width:auto; display:block;">
-    </div>
-
-    <!-- Inner ring (4 smalls) -->
+    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); height:400px; z-index:2; box-shadow:0 8px 30px rgba(0,0,0,0.15);"><img src="assetsc/Books/autostraddle big 1 1.webp" alt="Autostraddle" style="height:400px; width:auto; display:block;"></div>
     <div class="orbit-img-as" data-ring="inner" data-index="0"><img src="assetsc/Books/autostraddlesmall01.webp" alt=""></div>
     <div class="orbit-img-as" data-ring="inner" data-index="1"><img src="assetsc/Books/autostraddlesmall02.webp" alt=""></div>
     <div class="orbit-img-as" data-ring="inner" data-index="2"><img src="assetsc/Books/autostraddlesmall03.webp" alt=""></div>
     <div class="orbit-img-as" data-ring="inner" data-index="3"><img src="assetsc/Books/autostraddlesmall04.webp" alt=""></div>
-
-    <!-- Outer ring (8 images) -->
     <div class="orbit-img-as" data-ring="outer" data-index="0"><img src="assetsc/Books/autostraddlesmall05.webp" alt=""></div>
     <div class="orbit-img-as" data-ring="outer" data-index="1"><img src="assetsc/Books/autostraddlesmall06.webp" alt=""></div>
     <div class="orbit-img-as" data-ring="outer" data-index="2"><img src="assetsc/Books/autostraddlesmall07.webp" alt=""></div>
@@ -822,83 +277,13 @@ section h2 { color: #000; }
     <div class="orbit-img-as" data-ring="outer" data-index="7"><img src="assetsc/Books/autostraddle big 1 1.webp" alt=""></div>
   </div>
 
-  <style>
-    .orbit-img-as {
-      position: absolute;
-      pointer-events: none;
-    }
-    .orbit-img-as img {
-      display: block;
-      pointer-events: auto;
-    }
-  </style>
-
-  <script>
-  (function() {
-    var container = document.getElementById('autostraddle-orbit');
-    var inner = container.querySelectorAll('.orbit-img-as[data-ring="inner"]');
-    var outer = container.querySelectorAll('.orbit-img-as[data-ring="outer"]');
-    var tilt = [6, -8, 10, -5, 7, -9, 4, -6, 8, -7, 5, -4];
-
-    function animateRing(items, count, rx, ry, speed, size, ts, direction) {
-      var cx = container.offsetWidth / 2;
-      var cy = container.offsetHeight / 2;
-      items.forEach(function(el, i) {
-        var angle = (i / count) * Math.PI * 2 + ts * speed * direction;
-        var x = cx + Math.cos(angle) * rx;
-        var y = cy + Math.sin(angle) * ry;
-        var z = Math.sin(angle);
-        el.style.transform = 'translate(' + (x - size/2) + 'px, ' + (y - size/2) + 'px) rotate(' + tilt[i] + 'deg)';
-        el.style.zIndex = z > 0 ? 3 : 1;
-        el.querySelector('img').style.width = size + 'px';
-      });
-    }
-
-    function animate(ts) {
-      animateRing(inner, inner.length, 300, 100, 0.00025, 130, ts, 1);
-      animateRing(outer, outer.length, 500, 160, 0.00015, 100, ts, -1);
-      requestAnimationFrame(animate);
-    }
-    requestAnimationFrame(animate);
-  })();
-  </script>
-
-  <!-- LOGOS -->
   <div class="subsection-label">Logos</div>
-
   <div class="gallery-scroll">
-    <div class="gallery-item">
-      <img src="assetsc/Logos/4k.svg" alt="4K" style="width:50%; margin: 0 auto;">
-      <div class="gallery-item-info">
-        <h3>4K</h3>
-        <div class="role">Logo & Brand Identity</div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="assetsc/Logos/pessima.png" alt="Pessima">
-      <div class="gallery-item-info">
-        <h3>Pessima</h3>
-        <div class="role">Logo & Brand Identity</div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="assetsc/Logos/sperm.png" alt="Sperm Studios">
-      <div class="gallery-item-info">
-        <h3>Sperm Studios</h3>
-        <div class="role">Logo & Brand Identity</div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="assetsc/Logos/dysphoria.png" alt="Dysphoria">
-      <div class="gallery-item-info">
-        <h3>Dysphoria</h3>
-        <div class="role">Logo & Brand Identity</div>
-      </div>
-    </div>
+    <div class="gallery-item"><img src="assetsc/Logos/4k.svg" alt="4K" style="width:50%; margin:0 auto;"><div class="gallery-item-info"><h3>4K</h3><div class="role">Logo & Brand Identity</div></div></div>
+    <div class="gallery-item"><img src="assetsc/Logos/pessima.png" alt="Pessima"><div class="gallery-item-info"><h3>Pessima</h3><div class="role">Logo & Brand Identity</div></div></div>
+    <div class="gallery-item"><img src="assetsc/Logos/sperm.png" alt="Sperm Studios"><div class="gallery-item-info"><h3>Sperm Studios</h3><div class="role">Logo & Brand Identity</div></div></div>
+    <div class="gallery-item"><img src="assetsc/Logos/dysphoria.png" alt="Dysphoria"><div class="gallery-item-info"><h3>Dysphoria</h3><div class="role">Logo & Brand Identity</div></div></div>
   </div>
-
-  </div>
-
 </section>
 
 <div id="posterWrapper">
@@ -930,7 +315,6 @@ section h2 { color: #000; }
   </div>
 </div>
 
-<!-- 4. WEBSITES -->
 <section id="websites" style="flex-direction:column; padding:30px 0; background:#fff; align-items:flex-start;">
   <h2>Websites</h2>
   <div class="websites-list">
@@ -940,7 +324,6 @@ section h2 { color: #000; }
   </div>
 </section>
 
-<!-- 5. 3D -->
 <section id="threed" style="flex-direction:column; padding:30px 0; background:#fff; align-items:flex-start;">
   <h2>3D</h2>
   <div style="width:100%; display:flex; flex-direction:column; padding:0 30px; box-sizing:border-box; margin-bottom:20px; gap:2px;">
@@ -954,274 +337,269 @@ section h2 { color: #000; }
   </div>
 </section>
 
-<!-- 6. CURATION -->
 <section id="curation">
   <h2>Curation</h2>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="assetsc/Images/20250410_103929 1.webp" alt="4K: Touching Grass in Ultra HD">
-    </div>
-    <div class="project-overlay">
-      <h3>4K: Touching Grass in Ultra HD</h3>
-      <div class="role">Curator • 2025</div>
-      <p>A collective exhibition reflecting on artificial means of utopian life. Digital Art, Early AI and 3D sculpture explored dystopian imaginaries. Featured artists: Eva & Franco Mattes, Alfred Francis Pietroni, Jenia Filatova, Lars Larkin, Nelson Gutjahr, and more. BiM Milano, March-April 2025.</p>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="assetsc/Images/DSC03973-scaled 1.webp" alt="Opia by Opia">
-    </div>
-    <div class="project-overlay">
-      <h3>Opia by Opia</h3>
-      <div class="role">Curator • 2024</div>
-      <p>Solo exhibition by artist Opia exploring themes of identity and transformation through performance and installation. BiM Milano, October 2024.</p>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="assetsc/Images/lux.webp" alt="Apokalypsis Eschaton">
-    </div>
-    <div class="project-overlay">
-      <h3>Apokalypsis Eschaton</h3>
-      <div class="role">Curator • 2024</div>
-      <p>Solo exhibition by Lux Aeterna exploring apocalyptic themes and transformation. Co-curated with Marte Gastaldello. Fondoluogo, February 2024.</p>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="assetsc/Images/DSF2263-scaled 1.webp" alt="Devonian Mater">
-    </div>
-    <div class="project-overlay">
-      <h3>Devonian Mater</h3>
-      <div class="role">Curator • 2023</div>
-      <p>Solo exhibition by Ivy Chilelli exploring biomechanics and the evolving body through sculpture and installation. BiM Milano, December 2023.</p>
-    </div>
-  </div>
-
+  <div class="project"><div class="project-image"><img src="assetsc/Images/20250410_103929 1.webp" alt="4K: Touching Grass in Ultra HD"></div><div class="project-overlay"><h3>4K: Touching Grass in Ultra HD</h3><div class="role">Curator • 2025</div><p>A collective exhibition reflecting on artificial means of utopian life. Digital Art, Early AI and 3D sculpture explored dystopian imaginaries. Featured artists: Eva & Franco Mattes, Alfred Francis Pietroni, Jenia Filatova, Lars Larkin, Nelson Gutjahr, and more. BiM Milano, March-April 2025.</p></div></div>
+  <div class="project"><div class="project-image"><img src="assetsc/Images/DSC03973-scaled 1.webp" alt="Opia by Opia"></div><div class="project-overlay"><h3>Opia by Opia</h3><div class="role">Curator • 2024</div><p>Solo exhibition by artist Opia exploring themes of identity and transformation through performance and installation. BiM Milano, October 2024.</p></div></div>
+  <div class="project"><div class="project-image"><img src="assetsc/Images/lux.webp" alt="Apokalypsis Eschaton"></div><div class="project-overlay"><h3>Apokalypsis Eschaton</h3><div class="role">Curator • 2024</div><p>Solo exhibition by Lux Aeterna exploring apocalyptic themes and transformation. Co-curated with Marte Gastaldello. Fondoluogo, February 2024.</p></div></div>
+  <div class="project"><div class="project-image"><img src="assetsc/Images/DSF2263-scaled 1.webp" alt="Devonian Mater"></div><div class="project-overlay"><h3>Devonian Mater</h3><div class="role">Curator • 2023</div><p>Solo exhibition by Ivy Chilelli exploring biomechanics and the evolving body through sculpture and installation. BiM Milano, December 2023.</p></div></div>
 </section>
 
-<!-- 5. ARTWORKS -->
 <section id="artworks">
   <h2>Artworks</h2>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="assetsc/Artworks/Bandiera1.webp" alt="No room for effortless conversation">
-    </div>
-    <div class="project-overlay">
-      <h3>No room for effortless conversation</h3>
-      <div class="role">Artwork • 2024</div>
-      <p class="desktop-only">On the occasion of the end of the Specific Residence at BiM Milano, Simona collaborated with artist Marte Gastaldello on the creation of a collective work of public art, which will be installed on the facade of the construction site of the Pirelli building in front of BiM. It will be a large white flag on which a black text is printed, written in a moment of meeting and discussion between Marte, Simona and other people from the community.<br><br>The intervention starts from a reflection on the concept of the flag as an object capable of conveying an identity, both personal and collective. In dealing with this mechanism, Marte and Simona chose to create their own language starting from the one used in the posters found at the entrance to collective spaces, clubs and all other community centers. This is a well-defined code, which is used to communicate to those crossing that they are entering a safe space, in which their identity will not be questioned or questioned in any way. This language is taken, taken out of its context and abstracted in the form of the flag until it arrives at a graphic form which, in visual contrast with what inspired it, has no personal and emotional sign other than that expressed by the words themselves.<br><br>The intervention is inspired by the importance of language in the construction of an identity. In returning to BiM a trace of their passage, Marte and Simona want to bring a look into their microcosm to the building: the sign of a collective body that feels safe in its existence.<br><br>27 x 7m • 100% poliestere Pongè<br><br>On Display at Manifattura Tabacchi (FI), BASE (MI), BiM (MI)</p>
-      <p class="mobile-only">The intervention starts from a reflection on the concept of the flag as an object capable of conveying an identity, both personal and collective. In dealing with this mechanism, Marte and Simona chose to create their own language starting from the one used in the posters found at the entrance to collective spaces, clubs and all other community centers. This is a well-defined code, which is used to communicate to those crossing that they are entering a safe space, in which their identity will not be questioned or questioned in any way. This language is taken, taken out of its context and abstracted in the form of the flag until it arrives at a graphic form which, in visual contrast with what inspired it, has no personal and emotional sign other than that expressed by the words themselves.<br><br>27 x 7m • 100% poliestere Pongè</p>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="assetsc/Artworks/Touching1.webp" alt="Touching Grass/Sand in Ultra HD">
-    </div>
-    <div class="project-overlay">
-      <h3>Touching Grass/Sand in Ultra HD</h3>
-      <div class="role">Artwork • 2025</div>
-      <p class="desktop-only">"4K: Touching Grass in Ultra HD is a collective exhibit, curated by Simona Coltello, that reflects on artificial means of utopian life. Post Internet research, Early AI and 3D sculpture will be the main focuses to explore dystopian imaginaries, (chronically) online aesthetic influences, final-stage consumerism and promethean corruption of the artists' depiction of beauty."<br><br>Simona's work is the starting point from which the whole collective exhibition has came to life. The two natural rooms reflect the dystopian human instict to recreate nature with artificial means. Ambient Soundscapes, Fireplace Videos, Fake Plants, Indoor Climbing and Stars' Projections are all daily instruments from which the artist took inspiration in the creation of these natural environments. Humans have reached a point in which they would rather recreate nature than preserve it.<br><br>Collective Exhibition with: Alfred Francis Pietroni, Anais Bianca Beltrame, Bautista Botto Barili, Covid Room, Dorsa Rafiee, Eyeguys, Eva & Franco Mattes, Francesco Saverio Tani, Jenia Filatova, Lars Larkin, Nelson Gutjahr, Simona Coltello, Simone Restifo Pilato, x.luna<br><br>29th March – 05 April • 19.00–21.00<br>1000kg of Soil • 25x25m</p>
-      <p class="mobile-only">"4K: Touching Grass in Ultra HD is a collective exhibit, curated by Simona Coltello, that reflects on artificial means of utopian life. Post Internet research, Early AI and 3D sculpture will be the main focuses to explore dystopian imaginaries, (chronically) online aesthetic influences, final-stage consumerism and promethean corruption of the artists' depiction of beauty."<br><br>Simona's work is the starting point from which the whole collective exhibition has came to life. The two natural rooms reflect the dystopian human instict to recreate nature with artificial means. Ambient Soundscapes, Fireplace Videos, Fake Plants, Indoor Climbing and Stars' Projections are all daily instruments from which the artist took inspiration in the creation of these natural environments. Humans have reached a point in which they would rather recreate nature than preserve it.</p>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="assetsc/Artworks/desperate1.webp" alt="In Desperate Need of a Job">
-    </div>
-    <div class="project-overlay">
-      <h3>In Desperate Need of a Job</h3>
-      <div class="role">Artwork • 2024</div>
-      <p class="desktop-only">On Display at BiM (MI) for Bim Bum Bam by Kenny Alexander Laurence<br><br>"Il discorso si centra su un'Italia in divenire, meticcia, sessualmente libera e digitalizzata che, seppur minoritaria, si articola nel rapido e costante rimescolamento di una grande città europea attraversata da flutti planetari. Bim Bum Bam è un'onomatopea, la sonorità di una sequenza di azioni. Suoni che, rappresentati graficamente sulla pagina di un fumetto, veicolano sia una simultaneità che una consequenzialità di istanze. Un fermento scritto che scandisce il ritmo di una coreografia, o meglio, di una lotta generazionale combattuta per le sorti del mondo."<br><br>Con Opere di Ludovica Anversa, Nicola Bianco, Mara Callegaro, Federico Carena, Simona Coltello, Nicole Colombo, Riccardo De Biasi, Camilla De Siati, Valentina De Zanche, Alice Fiorelli, Martina Ferrari, Marte Livio, Lorenzo Schetter Li Greci, Alessandro Macciardi, Marcello Maranzan, Rebecca Momoli, Marvin Gabriele Nwachukwu, Marco Resta, Fabiola Skraqi, Mario Uliassi, Alejandra Varela Perera, Pietro Vedovato e Federico Zeltman.<br><br>Blueback Print</p>
-      <p class="mobile-only">On Display at BiM (MI) for Bim Bum Bam by Kenny Alexander Laurence<br><br>"Il discorso si centra su un'Italia in divenire, meticcia, sessualmente libera e digitalizzata che, seppur minoritaria, si articola nel rapido e costante rimescolamento di una grande città europea attraversata da flutti planetari. Bim Bum Bam è un'onomatopea, la sonorità di una sequenza di azioni. Suoni che, rappresentati graficamente sulla pagina di un fumetto, veicolano sia una simultaneità che una consequenzialità di istanze. Un fermento scritto che scandisce il ritmo di una coreografia, o meglio, di una lotta generazionale combattuta per le sorti del mondo."</p>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="assetsc/Artworks/pov1.webp" alt="POV">
-    </div>
-    <div class="project-overlay">
-      <h3>POV</h3>
-      <div class="role">Artwork • 2022</div>
-      <p>Shot in VHS, 4:3, 3 mins loop.<br><br>The eye/camera of the artist uncovers the point of view of the participants of Trans* rights protests in Milan. The dehumanizing gaze of the cameras is exposed and overthrown by the choice of making them the subject, and victim, of this video.<br><br>Displayed at Base Milano (2023), Bim Milano (2023).</p>
-    </div>
-  </div>
-
+  <div class="project"><div class="project-image"><img src="assetsc/Artworks/Bandiera1.webp" alt="No room for effortless conversation"></div><div class="project-overlay"><h3>No room for effortless conversation</h3><div class="role">Artwork • 2024</div><p class="desktop-only">On the occasion of the end of the Specific Residence at BiM Milano, Simona collaborated with artist Marte Gastaldello on the creation of a collective work of public art, which will be installed on the facade of the construction site of the Pirelli building in front of BiM. It will be a large white flag on which a black text is printed, written in a moment of meeting and discussion between Marte, Simona and other people from the community.<br><br>The intervention starts from a reflection on the concept of the flag as an object capable of conveying an identity, both personal and collective. In dealing with this mechanism, Marte and Simona chose to create their own language starting from the one used in the posters found at the entrance to collective spaces, clubs and all other community centers. This is a well-defined code, which is used to communicate to those crossing that they are entering a safe space, in which their identity will not be questioned or questioned in any way. This language is taken, taken out of its context and abstracted in the form of the flag until it arrives at a graphic form which, in visual contrast with what inspired it, has no personal and emotional sign other than that expressed by the words themselves.<br><br>The intervention is inspired by the importance of language in the construction of an identity. In returning to BiM a trace of their passage, Marte and Simona want to bring a look into their microcosm to the building: the sign of a collective body that feels safe in its existence.<br><br>27 x 7m • 100% poliestere Pongè<br><br>On Display at Manifattura Tabacchi (FI), BASE (MI), BiM (MI)</p><p class="mobile-only">The intervention starts from a reflection on the concept of the flag as an object capable of conveying an identity, both personal and collective. 27 x 7m • 100% poliestere Pongè</p></div></div>
+  <div class="project"><div class="project-image"><img src="assetsc/Artworks/Touching1.webp" alt="Touching Grass/Sand in Ultra HD"></div><div class="project-overlay"><h3>Touching Grass/Sand in Ultra HD</h3><div class="role">Artwork • 2025</div><p class="desktop-only">"4K: Touching Grass in Ultra HD is a collective exhibit, curated by Simona Coltello, that reflects on artificial means of utopian life."<br><br>Simona's work is the starting point from which the whole collective exhibition has came to life. The two natural rooms reflect the dystopian human instinct to recreate nature with artificial means.<br><br>29th March – 05 April • 19.00–21.00 • 1000kg of Soil • 25x25m</p><p class="mobile-only">"4K: Touching Grass in Ultra HD is a collective exhibit, curated by Simona Coltello, that reflects on artificial means of utopian life."</p></div></div>
+  <div class="project"><div class="project-image"><img src="assetsc/Artworks/desperate1.webp" alt="In Desperate Need of a Job"></div><div class="project-overlay"><h3>In Desperate Need of a Job</h3><div class="role">Artwork • 2024</div><p>On Display at BiM (MI) for Bim Bum Bam by Kenny Alexander Laurence. Blueback Print.</p></div></div>
+  <div class="project"><div class="project-image"><img src="assetsc/Artworks/pov1.webp" alt="POV"></div><div class="project-overlay"><h3>POV</h3><div class="role">Artwork • 2022</div><p>Shot in VHS, 4:3, 3 mins loop.<br><br>The eye/camera of the artist uncovers the point of view of the participants of Trans* rights protests in Milan. The dehumanizing gaze of the cameras is exposed and overthrown by the choice of making them the subject, and victim, of this video.<br><br>Displayed at Base Milano (2023), Bim Milano (2023).</p></div></div>
 </section>
-<div id="project-preview">
-  <img id="preview-img" src="" alt="">
-</div>
 
-<!-- POSTER LIGHTBOX -->
-<div id="poster-lightbox">
-  <img id="poster-lightbox-img" src="" alt="">
-</div>
-
-<!-- ORBIT LIGHTBOX -->
-<div id="orbit-lightbox" style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.97); z-index:999999; display:none; align-items:center; justify-content:center; cursor:pointer;">
+<div id="project-preview"><img id="preview-img" src="" alt=""></div>
+<div id="poster-lightbox"><img id="poster-lightbox-img" src="" alt=""></div>
+<div id="orbit-lightbox">
   <img id="orbit-lightbox-img" src="" alt="" style="max-width:90vw; max-height:90vh; object-fit:contain; display:block; animation:posterFadeIn 0.25s ease forwards;">
   <span style="position:absolute; bottom:30px; left:50%; transform:translateX(-50%); font-size:10px; text-transform:uppercase; letter-spacing:3px; color:#000; opacity:0.4; font-family:'founders-grotesk',Helvetica,sans-serif;">Click to close</span>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// --- Project overlay auto on scroll ---
-const fixedLogo = document.getElementById('fixed-logo');
-const preview = document.getElementById('project-preview');
-const previewImg = document.getElementById('preview-img');
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+// ─── UTILITIES ───────────────────────────────────────────────────────────────
 
-window.addEventListener('scroll', () => {
-  let found = false;
-  document.querySelectorAll('.project').forEach(project => {
-    const rect = project.getBoundingClientRect();
-    const inZone = rect.top < window.innerHeight * 0.7 && rect.bottom > window.innerHeight * 0.3;
-    if (inZone && !found) {
-      const img = project.querySelector('.project-image img');
-      if (img) previewImg.src = img.src;
-      project.classList.add('active');
-      fixedLogo.style.opacity = '0';
-      preview.classList.add('visible');
-      found = true;
-    } else {
-      project.classList.remove('active');
+// Throttle scroll events to max once per animation frame
+function onScrollRAF(fn) {
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() { fn(); ticking = false; });
+      ticking = true;
     }
-  });
-  if (!found) {
-    fixedLogo.style.opacity = '1';
-    preview.classList.remove('visible');
-    previewImg.src = '';
-  }
-}, { passive: true });
+  }, { passive: true });
+}
 
-// --- Poster deck sticky scroll ---
+// IntersectionObserver-based visibility: only animate orbits when on screen
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    e.target._orbitVisible = e.isIntersecting;
+  });
+}, { rootMargin: '200px' });
+
+// ─── ORBIT SYSTEM ────────────────────────────────────────────────────────────
+// Single shared rAF loop for ALL orbits — eliminates multiple competing loops
+
+var orbitSystems = [];
+
+function buildOrbitSystem(containerId, rings) {
+  var container = document.getElementById(containerId);
+  if (!container) return;
+
+  var cx = 0, cy = 0;
+  var resizeObserver = new ResizeObserver(function() {
+    cx = container.offsetWidth / 2;
+    cy = container.offsetHeight / 2;
+  });
+  resizeObserver.observe(container);
+  cx = container.offsetWidth / 2;
+  cy = container.offsetHeight / 2;
+
+  // Pre-query all elements once
+  var builtRings = rings.map(function(ring) {
+    var selector = ring.selector;
+    var items = Array.from(container.querySelectorAll(selector));
+    // Set initial img width via CSS class is cleaner but we keep inline for compat
+    items.forEach(function(el) {
+      el.querySelector('img').style.width = ring.size + 'px';
+    });
+    return {
+      items: items,
+      count: items.length,
+      rx: ring.rx, ry: ring.ry,
+      speed: ring.speed, size: ring.size,
+      dir: ring.dir || 1,
+      tilt: ring.tilt || [6,-8,10,-5,7,-9,4,-6,8,-7,5,-4]
+    };
+  });
+
+  io.observe(container);
+  orbitSystems.push({ container: container, rings: builtRings, getCx: function(){ return cx; }, getCy: function(){ return cy; } });
+}
+
+function animateAllOrbits(ts) {
+  orbitSystems.forEach(function(sys) {
+    if (!sys.container._orbitVisible) return; // skip if off-screen
+    var cx = sys.getCx(), cy = sys.getCy();
+    sys.rings.forEach(function(ring) {
+      var items = ring.items, count = ring.count;
+      for (var i = 0; i < count; i++) {
+        var angle = (i / count) * Math.PI * 2 + ts * ring.speed * ring.dir;
+        var x = cx + Math.cos(angle) * ring.rx;
+        var y = cy + Math.sin(angle) * ring.ry;
+        var z = Math.sin(angle);
+        var tilt = ring.tilt[i % ring.tilt.length];
+        items[i].style.transform = 'translate(' + (x - ring.size/2) + 'px,' + (y - ring.size/2) + 'px) rotate(' + tilt + 'deg)';
+        items[i].style.zIndex = z > 0 ? 3 : 1;
+      }
+    });
+  });
+  requestAnimationFrame(animateAllOrbits);
+}
+
+// Build all three orbit systems
+buildOrbitSystem('pessima-orbit', [
+  { selector: '.orbit-img[data-ring="inner"]', rx:300, ry:100, speed:0.00025, size:130, dir:1 },
+  { selector: '.orbit-img[data-ring="outer"]', rx:500, ry:160, speed:0.00015, size:100, dir:-1 }
+]);
+buildOrbitSystem('alien-orbit', [
+  { selector: '.orbit-img-af', rx:340, ry:120, speed:0.00022, size:150, dir:1, tilt:[6,-8,10] }
+]);
+buildOrbitSystem('autostraddle-orbit', [
+  { selector: '.orbit-img-as[data-ring="inner"]', rx:300, ry:100, speed:0.00025, size:130, dir:1 },
+  { selector: '.orbit-img-as[data-ring="outer"]', rx:500, ry:160, speed:0.00015, size:100, dir:-1 }
+]);
+
+requestAnimationFrame(animateAllOrbits);
+
+// ─── POSTER DECK ─────────────────────────────────────────────────────────────
 (function() {
-  const wrapper = document.getElementById('posterWrapper');
-  const container = document.getElementById('posterScroll');
+  var wrapper = document.getElementById('posterWrapper');
+  var container = document.getElementById('posterScroll');
   if (!wrapper || !container) return;
 
-  const items = Array.from(container.querySelectorAll('.poster-item'));
-  const END_OFFSET = 270;
+  var items = Array.from(container.querySelectorAll('.poster-item'));
+  var END_OFFSET = 270;
+  items.forEach(function(item, i) { item.style.zIndex = i + 1; });
 
-  items.forEach((item, i) => {
-    item.style.zIndex = i + 1;
-    item.style.willChange = 'transform';
-  });
-
-  const ZONE = window.innerHeight * 0.4;
+  var ZONE = window.innerHeight * 0.4;
   wrapper.style.height = (ZONE + window.innerHeight) + 'px';
 
-  let target = 0;
-  let current = 0;
+  var current = 0, target = 0;
+  var wrapperTop = 0;
 
-  function getTarget() {
-    const scrolled = Math.max(0, -wrapper.getBoundingClientRect().top);
+  // Cache wrapper position, only update on resize
+  function updateWrapperTop() {
+    wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
+    ZONE = window.innerHeight * 0.4;
+    wrapper.style.height = (ZONE + window.innerHeight) + 'px';
+  }
+  updateWrapperTop();
+  window.addEventListener('resize', updateWrapperTop, { passive: true });
+
+  function getPosterTarget() {
+    var scrolled = Math.max(0, window.scrollY - wrapperTop);
     return Math.min(scrolled / ZONE, 1);
   }
 
-  function render(p) {
-    const acc = Math.pow(p, 2);
-    items.forEach((item, i) => {
-      item.style.transform = 'translateX(' + (i * END_OFFSET * acc) + 'px)';
-    });
-  }
-
-  function loop() {
-    target = getTarget();
+  function posterLoop() {
+    target = getPosterTarget();
     current += (target - current) * 0.08;
     if (Math.abs(target - current) < 0.0001) current = target;
-    render(current);
-    requestAnimationFrame(loop);
+    var acc = current * current;
+    for (var i = 0; i < items.length; i++) {
+      items[i].style.transform = 'translateX(' + (i * END_OFFSET * acc) + 'px)';
+    }
+    requestAnimationFrame(posterLoop);
   }
-
-  requestAnimationFrame(loop);
+  requestAnimationFrame(posterLoop);
 })();
 
-// --- Poster lightbox ---
+// ─── PROJECT OVERLAY ON SCROLL ───────────────────────────────────────────────
 (function() {
-  const lightbox = document.getElementById('poster-lightbox');
-  const lbImg = document.getElementById('poster-lightbox-img');
+  var fixedLogo = document.getElementById('fixed-logo');
+  var preview = document.getElementById('project-preview');
+  var previewImg = document.getElementById('preview-img');
+  var projects = Array.from(document.querySelectorAll('.project'));
+  var vh = window.innerHeight;
+  window.addEventListener('resize', function() { vh = window.innerHeight; }, { passive: true });
 
-  document.querySelectorAll('.poster-item').forEach(function(item) {
-    item.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const img = item.querySelector('img');
-      if (!img) return;
-      lbImg.src = img.src;
-      lbImg.alt = img.alt;
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  lightbox.addEventListener('click', function() {
-    lightbox.classList.remove('open');
-    lbImg.src = '';
-    document.body.style.overflow = '';
-  });
-
-  // Also close on Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
-      lightbox.classList.remove('open');
-      lbImg.src = '';
-      document.body.style.overflow = '';
+  onScrollRAF(function() {
+    var found = false;
+    for (var i = 0; i < projects.length; i++) {
+      var project = projects[i];
+      var rect = project.getBoundingClientRect();
+      var inZone = rect.top < vh * 0.7 && rect.bottom > vh * 0.3;
+      if (inZone && !found) {
+        var img = project.querySelector('.project-image img');
+        if (img && previewImg.src !== img.src) previewImg.src = img.src;
+        project.classList.add('active');
+        fixedLogo.style.opacity = '0';
+        preview.classList.add('visible');
+        found = true;
+      } else {
+        project.classList.remove('active');
+      }
+    }
+    if (!found) {
+      fixedLogo.style.opacity = '1';
+      preview.classList.remove('visible');
     }
   });
 })();
 
-// --- Photo lightbox ---
+// ─── LIGHTBOXES ───────────────────────────────────────────────────────────────
 (function() {
-  const lightbox = document.getElementById('photo-lightbox');
-  const lbImg = document.getElementById('lightbox-img');
+  // Poster lightbox
+  var posterLB = document.getElementById('poster-lightbox');
+  var posterLBImg = document.getElementById('poster-lightbox-img');
+  document.querySelectorAll('.poster-item').forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var img = item.querySelector('img');
+      if (!img) return;
+      posterLBImg.src = img.src;
+      posterLB.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  posterLB.addEventListener('click', function() {
+    posterLB.classList.remove('open');
+    posterLBImg.src = '';
+    document.body.style.overflow = '';
+  });
+
+  // Photo lightbox
+  var photoLB = document.getElementById('photo-lightbox');
+  var photoLBImg = document.getElementById('lightbox-img');
   document.querySelectorAll('.photo-grid img').forEach(function(img) {
     img.addEventListener('click', function() {
-      lbImg.src = img.src;
-      lightbox.classList.add('open');
+      photoLBImg.src = img.src;
+      photoLB.classList.add('open');
+      document.body.style.overflow = 'hidden';
     });
   });
-  lightbox.addEventListener('click', function() {
-    lightbox.classList.remove('open');
-    lbImg.src = '';
-  });
-})();
-
-// --- Orbit lightbox ---
-(function() {
-  const lightbox = document.getElementById('orbit-lightbox');
-  const lbImg = document.getElementById('orbit-lightbox-img');
-
-  function openOrbitLightbox(src) {
-    lbImg.src = src;
-    lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeOrbitLightbox() {
-    lightbox.style.display = 'none';
-    lbImg.src = '';
+  photoLB.addEventListener('click', function() {
+    photoLB.classList.remove('open');
+    photoLBImg.src = '';
     document.body.style.overflow = '';
-  }
+  });
 
+  // Orbit lightbox
+  var orbitLB = document.getElementById('orbit-lightbox');
+  var orbitLBImg = document.getElementById('orbit-lightbox-img');
   document.querySelectorAll('.orbit-img img, .orbit-img-as img, .orbit-img-af img').forEach(function(img) {
-    img.style.cursor = 'pointer';
-    img.style.pointerEvents = 'auto';
     img.addEventListener('click', function(e) {
       e.stopPropagation();
-      openOrbitLightbox(img.src);
+      orbitLBImg.src = img.src;
+      orbitLB.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     });
   });
+  orbitLB.addEventListener('click', function() {
+    orbitLB.style.display = 'none';
+    orbitLBImg.src = '';
+    document.body.style.overflow = '';
+  });
 
-  lightbox.addEventListener('click', closeOrbitLightbox);
-
+  // Escape key for all
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeOrbitLightbox();
+    if (e.key !== 'Escape') return;
+    [posterLB, photoLB].forEach(function(lb) {
+      if (lb.classList.contains('open')) {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+    if (orbitLB.style.display === 'flex') {
+      orbitLB.style.display = 'none';
+      document.body.style.overflow = '';
+    }
   });
 })();
 </script>
